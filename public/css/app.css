@@ -10491,7 +10491,8 @@ a.text-dark:focus {
 }
 
 .meta-container small {
-  color: orange;
+  color: rgba(253, 164, 40, 0.6);
+  font-weight: bold;
   font-style: italic;
 }
 
