@@ -16,7 +16,7 @@
 
         <div class="meta-container">
             <h1>Hello World.</h1>
-            <small>Zombie Killer Robots Inc.</small>
+            <small class="text-muted">Zombie Killer Robots Inc.</small>
         </div>
 
     </body>
