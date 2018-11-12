@@ -5,31 +5,81 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    h1 {
-        margin: 0;
-        text-align: center;
-        font-size: 10rem;
-        font-weight: bold;
-        letter-spacing: -0.625rem;
-        span {
-            position: relative;
-            right: 25px;
+
+    .mycontainer {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+
+        > div {
+            width: 100%;
         }
-    }
-    small {
-        position: relative;
-        font-weight: bold;
-        font-style: italic;
-        cursor: pointer;
-        &.text1 {
-            right: 30px;
-            bottom: 40px;
-            opacity: 1;
+
+        > div {
+            &.top {
+                height: 40vh;
+                padding: 2rem;
+                > h1 {
+                    margin: 0;
+                    text-align: center;
+                    font-size: 10rem;
+                    font-weight: bold;
+                    letter-spacing: -0.625rem;
+                    > span {
+                        position: relative;
+                        right: 25px;
+                    }
+                }
+                > div {
+                    width: 100%;
+                    > p {
+                        position: relative;
+                        font-weight: bold;
+                        font-style: italic;
+                        cursor: pointer;
+
+                        &.text1 {
+                            right: 30px;
+                            bottom: 40px;
+                            opacity: 1;
+                        }
+                        &.text2 {
+                            right: 35px;
+                            bottom: 58px;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
         }
-        &.text2 {
-            right: 35px;
-            bottom: 58px;
-            opacity: 0;
+        > div {
+            &.bottom {
+                display: flex;
+                height: 60vh;
+                background-color: gray;
+                padding: 4rem;
+                > div {
+                    &.card-container {
+                        display: flex;
+                        flex: 1;
+                        flex-direction: row;
+                        justify-content: center;
+                        > div {
+                            &.mycard {
+                                flex: 1;
+                                display: flex;
+                                min-height: 15rem;
+                                min-width: 15rem;
+                                justify-content: center;
+                                align-items: center;
+                                border: solid 1px #000;
+                                margin: 0 2rem;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
