@@ -10640,12 +10640,8 @@ a:hover {
   cursor: pointer;
   overflow: auto;
   text-align: center;
-}
-
-.meta-container .my-container > div.top > p.text {
   right: 32px;
   bottom: 40px;
-  opacity: 1;
 }
 
 .meta-container .my-container > div.bottom {
