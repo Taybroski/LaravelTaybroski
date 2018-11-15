@@ -2,29 +2,37 @@
 
 @section('content')
 
-    <div class="mycontainer">
+    <div class="my-container">
         <div class="top">
-            <h1>tay<span>.</span></h1>
-            <div><p class="text1 text-muted">Buy, Sell, Strum, Code</p></div>
-            <div><p class="text2 text-muted">Zombie Killer Robots Inc.</p></div>
+            <div class="tay">
+                <h1>tay<span>.</span></h1>
+            </div>
+            <p id="slogan" class="text1 text-muted">Buy, Sell, Strum, Code.</p>
+            <p id="slogan" class="text2 text-muted">Zombie Killer Robots Inc.</p>
         </div>
         
         <div class="bottom">
             <div class="card-container">
                 <div class="mycard">
-                    <div class="card-portfolio">
-                        Portfolio
-                    </div>
+                    <a href="#" class="link">
+                        <div class="card-portfolio">
+                            Portfolio
+                        </div>
+                    </a>
                 </div>
                 <div class="mycard">
-                    <div class="card-contact">
-                        Contact
-                    </div>
+                    <a href="#" class="link">
+                        <div class="card-blog">
+                            Blog
+                        </div>
+                    </a>
                 </div>
                 <div class="mycard">
-                    <div class="card-blog">
-                        Blog
-                    </div>
+                    <a href="#" class="link">
+                        <div class="card-contact">
+                            Contact
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
