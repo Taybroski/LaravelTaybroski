@@ -14,8 +14,8 @@ $(document).ready(function() {
     let clicks = 0;
 
     slogan.click(function() {
-        slogan.text("Zombie Killer Robots Inc.").css("right", "38px");
         clicks++;
+        slogan.text("Zombie Killer Robots Inc.").css("right", "38px");
         if (clicks == 2) {
             slogan.text("Buy, Sell, Strum, Code.").css("right", "32px");
             clicks = 0;
