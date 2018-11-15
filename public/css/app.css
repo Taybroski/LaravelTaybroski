@@ -10502,17 +10502,7 @@ a.text-dark:focus {
   font-weight: bold;
   font-style: italic;
   cursor: pointer;
-}
-
-.meta-container small.text1 {
-  right: 30px;
+  right: 32px;
   bottom: 40px;
-  opacity: 1;
-}
-
-.meta-container small.text2 {
-  right: 35px;
-  bottom: 58px;
-  opacity: 0;
 }
 

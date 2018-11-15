@@ -21,15 +21,7 @@
         font-weight: bold;
         font-style: italic;
         cursor: pointer;
-        &.text1 {
-            right: 30px;
-            bottom: 40px;
-            opacity: 1;
-        }
-        &.text2 {
-            right: 35px;
-            bottom: 58px;
-            opacity: 0;
-        }
+        right: 32px;
+        bottom: 40px;
     }
 }

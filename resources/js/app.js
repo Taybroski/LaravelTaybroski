@@ -10,18 +10,14 @@ $(document).ready(function() {
     console.log("ready");
 
     var small = $("small");
-    var text1 = $(".text1");
-    var text2 = $(".text2");
     var clicks = 0;
 
     small.click(function() {
         console.log("clicked");
         clicks++;
-        text1.fadeTo("fast", 0, function() {});
-        text2.fadeTo("slow", 1, function() {});
+        small.text("Zombie Killer Robots Inc.").css("right", "38px");
         if (clicks == 2) {
-            text2.fadeTo("slow", 0, function() {});
-            text1.fadeTo("fast", 1, function() {});
+            small.text("Buy, Sell, Strum, Code.").css("right", "32px");
             clicks = 0;
         }
     });
