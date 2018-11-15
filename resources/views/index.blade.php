@@ -7,8 +7,8 @@
             <div class="tay">
                 <h1>tay<span>.</span></h1>
             </div>
-            <p id="slogan" class="text1 text-muted">Buy, Sell, Strum, Code.</p>
-            <p id="slogan" class="text2 text-muted">Zombie Killer Robots Inc.</p>
+            <p class="slogan text text-muted">Buy, Sell, Strum, Code.</p>
+            {{-- <p class="text2 slogan text-muted">Zombie Killer Robots Inc.</p> --}}
         </div>
         
         <div class="bottom">

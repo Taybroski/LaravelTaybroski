@@ -13709,20 +13709,15 @@ __webpack_require__(12);
 $(document).ready(function () {
     console.log("ready");
 
-    var slogan = $("#slogan");
-    var text1 = $(".text1");
-    var text2 = $(".text2");
+    var slogan = $(".slogan");
+    var text = $(".text");
     var clicks = 0;
 
     slogan.click(function () {
-        console.log("clicked");
+        slogan.text("Zombie Killer Robots Inc.").css("right", "38px");
         clicks++;
-        // text1.fadeTo("fast", 0, function() {});
-        text1.css("opacity", 0);
-        text2.fadeTo("fast", 1, function () {});
         if (clicks == 2) {
-            text2.fadeTo("slow", 0, function () {});
-            text1.fadeTo("fast", 1, function () {});
+            slogan.text("Buy, Sell, Strum, Code.").css("right", "32px");
             clicks = 0;
         }
     });

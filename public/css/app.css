@@ -10642,16 +10642,10 @@ a:hover {
   text-align: center;
 }
 
-.meta-container .my-container > div.top > p.text1 {
+.meta-container .my-container > div.top > p.text {
   right: 32px;
   bottom: 40px;
   opacity: 1;
-}
-
-.meta-container .my-container > div.top > p.text2 {
-  right: 32px;
-  bottom: 59px;
-  opacity: 0;
 }
 
 .meta-container .my-container > div.bottom {

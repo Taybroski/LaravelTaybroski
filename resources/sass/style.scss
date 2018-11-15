@@ -106,7 +106,6 @@ a:hover {
         > div {
             width: 100%;
         }
-
         > div {
             &.top {
                 height: 40vh;
@@ -143,15 +142,10 @@ a:hover {
                     cursor: pointer;
                     overflow: auto;
                     text-align: center;
-                    &.text1 {
+                    &.text {
                         right: 32px;
                         bottom: 40px;
                         opacity: 1;
-                    }
-                    &.text2 {
-                        right: 32px;
-                        bottom: 59px;
-                        opacity: 0;
                     }
                 }
             }
