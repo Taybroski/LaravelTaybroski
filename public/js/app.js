@@ -13724,7 +13724,7 @@ $(document).ready(function () {
         }
         // Easter egg: 1
         if (clickLog == 69) {
-            alert("You Win! .... Nothing.");
+            alert("You just clicked this 69 times! You Win! .... Nothing.");
         }
     });
 });

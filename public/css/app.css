@@ -10562,20 +10562,7 @@ a:hover {
 
 .meta-container {
   width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 100%;
 }
 
 .meta-container .my-container {
@@ -10594,16 +10581,15 @@ a:hover {
   width: 100%;
 }
 
-.meta-container .my-container > div.top {
-  height: 40vh;
-  min-height: 18.75rem;
-  padding: 2rem;
+.meta-container .my-container .top {
+  min-height: 225px;
+  padding: 0 2rem 2rem 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.meta-container .my-container > div.top > div.tay {
+.meta-container .my-container .top .tay {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10615,7 +10601,7 @@ a:hover {
           justify-content: center;
 }
 
-.meta-container .my-container > div.top > div.tay > h1 {
+.meta-container .my-container .top .tay h1 {
   vertical-align: middle;
   text-align: center;
   font-size: 10rem;
@@ -10624,14 +10610,14 @@ a:hover {
   overflow: auto;
 }
 
-.meta-container .my-container > div.top > div.tay > h1 > span {
+.meta-container .my-container .top .tay h1 span {
   position: relative;
   right: 25px;
   color: orange;
   opacity: 0.5;
 }
 
-.meta-container .my-container > div.top > p {
+.meta-container .my-container .top p {
   width: 100%;
   position: relative;
   font-size: 0.75rem;
@@ -10644,22 +10630,37 @@ a:hover {
   bottom: 40px;
 }
 
-.meta-container .my-container > div.bottom {
+.meta-container .my-container .bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 60vh;
-  background-color: gray;
-  padding: 4rem;
+  width: 100%;
+  min-height: 100%;
+  background-color: #f1f1f1;
+  padding: 2rem;
 }
 
-.meta-container .my-container > div.bottom > div.card-container {
+.meta-container .my-container .bottom .bottom-left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
+}
+
+.meta-container .my-container .bottom .bottom-right {
+  width: 100%;
+  height: inherit;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
+}
+
+.meta-container .my-container .bottom .bottom-right .card-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -10667,24 +10668,30 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.meta-container .my-container > div.bottom > div.card-container > div.mycard {
+.meta-container .my-container .bottom .bottom-right .card-container .my-card {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 15rem;
-  min-width: 15rem;
+  max-height: 15rem;
+  min-height: 10rem;
+  max-width: 15rem;
+  min-width: 10rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: solid 1px #000;
-  margin: 0 2rem;
+  border-radius: 0.3125rem;
+  margin: 1rem 1rem;
+  -webkit-box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.075);
+          box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.075);
 }
 

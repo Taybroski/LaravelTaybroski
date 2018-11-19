@@ -11,27 +11,40 @@
         </div>
         
         <div class="bottom">
-            <div class="card-container">
-                <div class="mycard">
-                    <a href="#" class="link">
-                        <div class="card-portfolio">
-                            Portfolio
-                        </div>
-                    </a>
-                </div>
-                <div class="mycard">
-                    <a href="#" class="link">
-                        <div class="card-blog">
-                            Blog
-                        </div>
-                    </a>
-                </div>
-                <div class="mycard">
-                    <a href="#" class="link">
-                        <div class="card-contact">
-                            Contact
-                        </div>
-                    </a>
+            <div class="bottom-left">
+
+            </div>
+            <div class="bottom-right">
+                <div class="card-container">
+                    <div class="my-card">
+                        <a href="#" class="link">
+                            <div class="card-portfolio">
+                                <div class="card-image"></div>
+                                <h2>Portfolio</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-card">
+                        <a href="#" class="link">
+                            <div class="card-blog">
+                                <h2>Blog</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-card">
+                        <a href="#" class="link">
+                            <div class="card-contact">
+                                <h2>Contact</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-card">
+                        <a href="#" class="link">
+                            <div class="card-recomendations">
+                                <h2>Recomendations</h2>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
