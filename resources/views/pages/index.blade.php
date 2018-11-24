@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('body_class', 'index-page')
 
 @section('content')
 
@@ -32,7 +33,7 @@
                         </a>
                     </div>
                     <div class="my-card">
-                        <a href="#" class="link">
+                        <a href="/contact" class="link">
                             <div class="card-contact">
                                 <h2>Contact</h2>
                             </div>

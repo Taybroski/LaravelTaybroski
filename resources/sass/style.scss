@@ -94,10 +94,43 @@ a:hover {
 .meta-container {
     width: 100%;
     height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-navbar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        li:last-child {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.comment {
+    border: 1px solid #000;
+}
+
+.index-page {
     .my-container {
         display: flex;
         width: 100%;
