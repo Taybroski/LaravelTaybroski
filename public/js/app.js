@@ -84,7 +84,7 @@ throw new Error("Module build failed: SyntaxError: Unexpected token (12:0)\n\n\u
 /***/ 36:
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n    }\n    ^\n      Invalid CSS after \"    }\": expected \"}\", was \"<<<<<<< HEAD\"\n      in /Users/tay/Documents/code/taybroski/laravel/taybroski/resources/sass/style.scss (line 131, column 6)\n    at runLoaders (/Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/neo-async/async.js:8077:18)\n    at options.error (/Users/tay/Documents/code/taybroski/laravel/taybroski/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 

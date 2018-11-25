@@ -10756,13 +10756,6 @@ a:hover {
   height: 150px;
   margin: 0 auto;
   position: relative;
-<<<<<<< HEAD
-  font-weight: bold;
-  font-style: italic;
-  cursor: pointer;
-  right: 32px;
-  bottom: 40px;
-=======
   overflow: hidden;
 }
 
@@ -10810,6 +10803,5 @@ a:hover {
 .index-page .my-container .big-card .index-slogan h2 > span {
   font-weight: bold;
   color: #ff9b0f;
->>>>>>> develop
 }
 
