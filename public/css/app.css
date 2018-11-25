@@ -10466,9 +10466,103 @@ a.text-dark:focus {
   }
 }
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
 .meta-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10484,25 +10578,238 @@ a.text-dark:focus {
           align-items: center;
 }
 
-.meta-container h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 10rem;
+.my-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  min-height: 2.5rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.my-navbar .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   font-weight: bold;
-  letter-spacing: -0.625rem;
+  text-transform: lowercase;
+  font-size: 1.1rem;
 }
 
-.meta-container h1 span {
-  position: relative;
-  right: 25px;
+.my-navbar .nav-links .nav-link {
+  overflow: auto;
+  margin: 0 5px;
 }
 
-.meta-container small {
+.my-navbar .nav-links .nav-link :hover {
+  -webkit-text-decoration: underline #ff9b0f wavy;
+          text-decoration: underline #ff9b0f wavy;
+}
+
+.my-navbar .nav-links .nav-link a {
+  color: #d8d8d8;
+}
+
+.my-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post {
+  width: 50%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+.comment {
+  border: 1px solid #000;
+}
+
+.index-page .my-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  padding: 2rem;
+}
+
+.index-page .my-container .big-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
   position: relative;
+}
+
+.index-page .my-container .big-card .index-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.index-page .my-container .big-card .index-header .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.index-page .my-container .big-card .index-header h1 {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  text-align: center;
+  font-size: 8rem;
+  letter-spacing: -12px;
+  position: relative;
+}
+
+.index-page .my-container .big-card .index-header h1 span:first-child,
+.index-page .my-container .big-card .index-header h1 span:last-child {
+  color: #ff9b0f;
+}
+
+.index-page .my-container .big-card .index-header h1 span:nth-child(2) {
+  color: #e4e4e4;
+  font-size: 8rem;
+}
+
+.index-page .my-container .big-card .index-header h1 span:nth-child(3) {
+  font-size: 14rem;
+}
+
+.index-page .my-container .big-card .index-header h1 span:last-child {
+  position: absolute;
+  top: 35%;
+  right: 8%;
+}
+
+.index-page .my-container .big-card .index-slogan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #d8d8d8;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container {
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+<<<<<<< HEAD
   font-weight: bold;
   font-style: italic;
   cursor: pointer;
   right: 32px;
   bottom: 40px;
+=======
+  overflow: hidden;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container span {
+  color: #ff9b0f;
+  font-size: 10rem;
+  letter-spacing: -15px;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-quote,
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote,
+.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan,
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan,
+.index-page .my-container .big-card .index-slogan .slogan-container .line {
+  position: absolute;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-quote {
+  bottom: -30%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan {
+  top: 15%;
+  left: 15%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote {
+  right: 2%;
+  bottom: -50%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan {
+  right: 15%;
+  top: 35%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .line {
+  width: 225px;
+  border-bottom: 2px dashed #000;
+  opacity: 0.6;
+  top: 32%;
+  right: 23%;
+}
+
+.index-page .my-container .big-card .index-slogan h2 > span {
+  font-weight: bold;
+  color: #ff9b0f;
+>>>>>>> develop
 }
 
