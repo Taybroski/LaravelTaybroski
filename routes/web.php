@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// User Auth routes
+Auth::routes();
+
+// Pages Controller routes
+Route::get('/', 'PagesController@index');
+Route::get('/contact', 'PagesController@contact');
+Route::get('/portfolio', 'PagesController@portfolio');
+Route::get('/dashboard', 'PagesController@dashboard')->middleware('auth');
+
+// Posts Controller routes
+Route::resource('posts', 'PostsController');
+
+// Comments Controller routes
+Route::resource('comments', 'CommentsController');
