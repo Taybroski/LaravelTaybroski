@@ -4,49 +4,31 @@
 @section('content')
 
     <div class="my-container">
-        <div class="top">
-            <div class="tay">
+        <div class="big-card">
+            @include('partials.navbar')
+            {{-- <div class="tay">
                 <h1>tay<span>.</span></h1>
             </div>
-            <p class="slogan text-muted">Buy, Sell, Strum, Code.</p>            
-        </div>
-        
-        <div class="bottom">
-            <div class="bottom-left">
-
-            </div>
-            <div class="bottom-right">
-                <div class="card-container">
-                    <div class="my-card">
-                        <a href="#" class="link">
-                            <div class="card-portfolio">
-                                <div class="card-image"></div>
-                                <h2>Portfolio</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="my-card">
-                        <a href="#" class="link">
-                            <div class="card-blog">
-                                <h2>Blog</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="my-card">
-                        <a href="/contact" class="link">
-                            <div class="card-contact">
-                                <h2>Contact</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="my-card">
-                        <a href="#" class="link">
-                            <div class="card-recomendations">
-                                <h2>Recomendations</h2>
-                            </div>
-                        </a>
-                    </div>
+            <p class="slogan text-muted">Buy, Sell, Strum, Code.</p> --}}
+            
+            <div class="index-header">
+                <div class="header-container">
+                    <h1>
+                        <span>hi</span>, <span>i'm </span> <span>tay</span><span>.</span>
+                    </h1>
                 </div>
+            </div>
+
+            <div class="index-slogan">
+                <div class="slogan-container">
+                    <span class="top-quote">''</span><p class="top-slogan">Buy, Sell, Strum, Code.</p>
+                    <div class="line"></div>
+                    <p class="bottom-slogan">Another Day, Another Node.</p><span class="bottom-quote">''</span>
+                </div>
+                <h2>E-Commercer <span>&amp;&amp;</span> Web Developer</h2>
+            </div>
+            <div class="another-slogan">
+                
             </div>
         </div>
     </div>

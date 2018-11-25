@@ -20,7 +20,7 @@
 <body class="@yield('body_class')">
   
   <div class="meta-container">
-    @include('partials.navbar')
+    {{-- @include('partials.navbar') --}}
     @include('partials.messages')
     @yield('content')
   </div>

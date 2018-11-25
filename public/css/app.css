@@ -10583,6 +10583,8 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 2.5rem;
+  min-height: 2.5rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -10600,11 +10602,23 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 1.1rem;
 }
 
-.my-navbar .nav-links li:last-child {
-  font-weight: bold;
-  text-decoration: underline;
+.my-navbar .nav-links .nav-link {
+  overflow: auto;
+  margin: 0 5px;
+}
+
+.my-navbar .nav-links .nav-link :hover {
+  -webkit-text-decoration: underline #ff9b0f wavy;
+          text-decoration: underline #ff9b0f wavy;
+}
+
+.my-navbar .nav-links .nav-link a {
+  color: #d8d8d8;
 }
 
 .my-form {
@@ -10633,127 +10647,161 @@ a:hover {
   display: flex;
   width: 100%;
   height: 100vh;
+  min-height: 700px;
+  padding: 2rem;
+}
+
+.index-page .my-container .big-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.index-page .my-container .big-card .index-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.index-page .my-container > div {
-  width: 100%;
-}
-
-.index-page .my-container .top {
-  min-height: 225px;
-  padding: 0 2rem 2rem 2rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.index-page .my-container .top .tay {
+.index-page .my-container .big-card .index-header .header-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.index-page .my-container .top .tay h1 {
-  vertical-align: middle;
+.index-page .my-container .big-card .index-header h1 {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
   text-align: center;
-  font-size: 10rem;
-  font-weight: bold;
-  letter-spacing: -0.625rem;
-  overflow: auto;
-}
-
-.index-page .my-container .top .tay h1 span {
+  font-size: 8rem;
+  letter-spacing: -12px;
   position: relative;
-  right: 25px;
-  color: orange;
-  opacity: 0.5;
 }
 
-.index-page .my-container .top p {
-  width: 100%;
-  position: relative;
-  font-size: 0.75rem;
-  font-weight: bold;
-  font-style: italic;
-  cursor: pointer;
-  overflow: auto;
-  text-align: center;
-  right: 32px;
-  bottom: 40px;
+.index-page .my-container .big-card .index-header h1 span:first-child,
+.index-page .my-container .big-card .index-header h1 span:last-child {
+  color: #ff9b0f;
 }
 
-.index-page .my-container .bottom {
+.index-page .my-container .big-card .index-header h1 span:nth-child(2) {
+  color: #e4e4e4;
+  font-size: 8rem;
+}
+
+.index-page .my-container .big-card .index-header h1 span:nth-child(3) {
+  font-size: 14rem;
+}
+
+.index-page .my-container .big-card .index-header h1 span:last-child {
+  position: absolute;
+  top: 35%;
+  right: 8%;
+}
+
+.index-page .my-container .big-card .index-slogan {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  min-height: 100%;
-  background-color: #f1f1f1;
-  padding: 2rem;
-}
-
-.index-page .my-container .bottom .bottom-left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 60%;
-          flex: 1 0 60%;
-}
-
-.index-page .my-container .bottom .bottom-right {
-  width: 100%;
-  height: inherit;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 40%;
-          flex: 1 0 40%;
-}
-
-.index-page .my-container .bottom .bottom-right .card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  -webkit-box-orient: horizontal;
+  height: 100%;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.index-page .my-container .bottom .bottom-right .card-container .my-card {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 15rem;
-  min-height: 10rem;
-  max-width: 15rem;
-  min-width: 10rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 0.3125rem;
-  margin: 1rem 1rem;
-  -webkit-box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.075);
-          box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.075);
+  color: #d8d8d8;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container {
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container span {
+  color: #ff9b0f;
+  font-size: 10rem;
+  letter-spacing: -15px;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-quote,
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote,
+.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan,
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan,
+.index-page .my-container .big-card .index-slogan .slogan-container .line {
+  position: absolute;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-quote {
+  bottom: -30%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan {
+  top: 15%;
+  left: 15%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote {
+  right: 2%;
+  bottom: -50%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan {
+  right: 15%;
+  top: 35%;
+}
+
+.index-page .my-container .big-card .index-slogan .slogan-container .line {
+  width: 225px;
+  border-bottom: 2px dashed #000;
+  opacity: 0.6;
+  top: 32%;
+  right: 23%;
+}
+
+.index-page .my-container .big-card .index-slogan h2 > span {
+  font-weight: bold;
+  color: #ff9b0f;
 }
 

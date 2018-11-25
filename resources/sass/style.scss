@@ -91,6 +91,10 @@ a:hover {
     color: #000;
 }
 
+$lightGrey: #e4e4e4;
+$darkGrey: #d8d8d8;
+$myOrange: #ff9b0f;
+
 .meta-container {
     width: 100%;
     height: 100%;
@@ -103,14 +107,26 @@ a:hover {
 .my-navbar {
     display: flex;
     width: 100%;
+    height: 2.5rem;
+    min-height: 2.5rem;
     flex-direction: row;
     justify-content: center;
     .nav-links {
         display: flex;
         flex-direction: row;
-        li:last-child {
-            font-weight: bold;
-            text-decoration: underline;
+        font-weight: bold;
+        text-transform: lowercase;
+        font-size: 1.1rem;
+        .nav-link {
+            overflow: auto;
+            margin: 0 5px;
+            // height: 1.25rem;
+            :hover {
+                text-decoration: underline $myOrange wavy;
+            }
+            a {
+                color: $darkGrey;
+            }
         }
     }
 }
@@ -135,81 +151,112 @@ a:hover {
         display: flex;
         width: 100%;
         height: 100vh;
-        flex-direction: column;
-        > div {
+        min-height: 700px;
+        padding: 2rem;
+        .big-card {
+            display: flex;
+            flex-direction: column;
             width: 100%;
-        }
-        .top {
-            min-height: 225px;
-            padding: 0 2rem 2rem 2rem;
+            height: 100%;
+            padding: 1rem;
             align-items: center;
-            .tay {
+            border-radius: 30px;
+            box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+            position: relative;
+
+            .index-header {
                 display: flex;
+                width: 100%;
+                height: 100%;
+                min-height: 200px;
                 align-items: center;
                 justify-content: center;
+                flex-direction: column;
+                .header-container {
+                    display: flex;
+                    width: 600px;
+                    height: auto;
+                    margin: 0 auto;
+                    justify-content: flex-end;
+                }
                 h1 {
-                    vertical-align: middle;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 250px;
                     text-align: center;
-                    font-size: 10rem;
-                    font-weight: bold;
-                    letter-spacing: -0.625rem;
-                    overflow: auto;
-                    span {
-                        position: relative;
-                        right: 25px;
-                        color: orange;
-                        opacity: 0.5;
+                    font-size: 8rem;
+                    letter-spacing: -12px;
+                    position: relative;
+                    span:first-child,
+                    span:last-child {
+                        color: $myOrange;
+                    }
+                    span:nth-child(2) {
+                        color: $lightGrey;
+                        font-size: 8rem;
+                    }
+                    span:nth-child(3) {
+                        font-size: 14rem;
+                    }
+                    span:last-child {
+                        position: absolute;
+                        top: 35%;
+                        right: 8%;
                     }
                 }
             }
-
-            p {
+            .index-slogan {
+                display: flex;
                 width: 100%;
-                position: relative;
-                font-size: 0.75rem;
-                font-weight: bold;
-                font-style: italic;
-                cursor: pointer;
-                overflow: auto;
-                text-align: center;
-                right: 32px;
-                bottom: 40px;
-            }
-        }
-
-        .bottom {
-            display: flex;
-            width: 100%;
-            min-height: 100%;
-            background-color: #f1f1f1;
-            padding: 2rem;
-            // box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.05);
-            .bottom-left {
-                flex: 1 0 60%;
-            }
-            .bottom-right {
-                width: 100%;
-                height: inherit;
-                flex: 1 0 40%;
-                .card-container {
-                    display: flex;
-                    flex: 1 0 auto;
-                    flex-direction: row;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                    .my-card {
-                        flex-grow: 1;
-                        display: flex;
-                        max-height: 15rem;
-                        min-height: 10rem;
-                        max-width: 15rem;
-                        min-width: 10rem;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: 0.3125rem;
-                        margin: 1rem 1rem;
-                        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.075);
+                height: 100%;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                color: $darkGrey;
+                .slogan-container {
+                    width: 400px;
+                    height: 150px;
+                    margin: 0 auto;
+                    position: relative;
+                    overflow: hidden;
+                    span {
+                        color: $myOrange;
+                        font-size: 10rem;
+                        letter-spacing: -15px;
                     }
+                    .top-quote,
+                    .bottom-quote,
+                    .top-slogan,
+                    .bottom-slogan,
+                    .line {
+                        position: absolute;
+                    }
+                    .top-quote {
+                        bottom: -30%;
+                    }
+                    .top-slogan {
+                        top: 15%;
+                        left: 15%;
+                    }
+                    .bottom-quote {
+                        right: 2%;
+                        bottom: -50%;
+                    }
+                    .bottom-slogan {
+                        right: 15%;
+                        top: 35%;
+                    }
+                    .line {
+                        width: 225px;
+                        border-bottom: 2px dashed #000;
+                        opacity: 0.6;
+                        top: 32%;
+                        right: 23%;
+                    }
+                }
+                h2 > span {
+                    font-weight: bold;
+                    color: $myOrange;
                 }
             }
         }
