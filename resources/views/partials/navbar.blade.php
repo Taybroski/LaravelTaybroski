@@ -1,4 +1,7 @@
 
+  {{-- @if (Request::url() == url('/'))
+    <nav class="my-navbar hide">      
+  @endif --}}
   <nav class="my-navbar">
     <ul class="nav-links">
       <li class="nav-link"><a href="/">Home</a></li>
@@ -13,12 +16,12 @@
           document.getElementById('logout-form').submit();">
           {{ __('Logout') }}
         </a></li>
-        <p class="nav-link">{{ auth()->user()->name }}</p>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
           @csrf
         </form>
       @else
         <li class="nav-link"><a href="/login">Login</a></li>
-      @endif    
+      @endif
+      <li class="nav-link"><i id="fa-close" class="fas fa-window-close"></i></li>
 
   </nav>

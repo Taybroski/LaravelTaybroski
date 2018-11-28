@@ -3,7 +3,30 @@ require("./bootstrap");
 $(document).ready(function() {
     console.log("ready");
 
-    let slogan = $(".slogan");
+    // CK Editor - WYSIWYG
+    let editor = $("#editor");
+    if (editor.length) {
+        CKEDITOR.replace("editor");
+    }
+
+    // Mobile dropdown nav
+    let closeNav = $("#fa-close");
+    let navbar = $(".nav-links");
+    let h = navbar.height();
+    closeNav.click(function() {
+        console.log(h);
+        navbar
+            .animate(
+                {
+                    top: `-=${h}`
+                },
+                300,
+                "linear"
+            )
+            .css("box-shadow", "none");
+    });
+
+    let slogan = $(".slogan").slideDown();
     let clicks = 0;
     let clickLog = 0;
 

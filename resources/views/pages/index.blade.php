@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('body_class', 'index-page')
+@section('body_class', 'index-page mobile-nav-hide')
 
 @section('content')
 

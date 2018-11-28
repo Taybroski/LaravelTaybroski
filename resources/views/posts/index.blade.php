@@ -12,7 +12,7 @@
     <div class="post">
       <br>
       <h2><a href="/posts/{{ $p->id }}">{{ $p->title }}</a></h2>    
-      <p>{{ $p->body }}</p>
+      <p>{!! $p->body !!}</p>
       <p class="text-muted">Author: {{ $p->user->name }}</p>
       <p class="text-muted">Posted: {{ \Carbon\Carbon::parse($p->created_at)->format('dS F Y h:ia') }}</p>
       {{-- <p class="text-muted">Posted: {{ \FormatHelper::formatPostDate($p->created_at) }}</p> --}}
