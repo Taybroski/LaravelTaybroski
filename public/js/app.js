@@ -13703,7 +13703,24 @@ __webpack_require__(12);
 $(document).ready(function () {
     console.log("ready");
 
-    var slogan = $(".slogan");
+    // CK Editor - WYSIWYG
+    var editor = $("#editor");
+    if (editor.length) {
+        CKEDITOR.replace("editor");
+    }
+
+    // Mobile dropdown nav
+    var closeNav = $("#fa-close");
+    var navbar = $(".nav-links");
+    var h = navbar.height();
+    closeNav.click(function () {
+        console.log(h);
+        navbar.animate({
+            top: "-=" + h
+        }, 300, "linear").css("box-shadow", "none");
+    });
+
+    var slogan = $(".slogan").slideDown();
     var clicks = 0;
     var clickLog = 0;
 
