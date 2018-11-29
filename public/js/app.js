@@ -13711,13 +13711,18 @@ $(document).ready(function () {
 
     // Mobile dropdown nav
     var closeNav = $("#fa-close");
+    var openNav = $(".mobile-nav");
     var navbar = $(".nav-links");
     var h = navbar.height();
-    closeNav.click(function () {
-        console.log(h);
+    openNav.click(function () {
         navbar.animate({
-            top: "-=" + h
-        }, 300, "linear").css("box-shadow", "none");
+            top: "0"
+        }, 250, "linear");
+    });
+    closeNav.click(function () {
+        navbar.animate({
+            top: "-100%"
+        }, 250, "linear").css("box-shadow", "none");
     });
 
     var slogan = $(".slogan").slideDown();

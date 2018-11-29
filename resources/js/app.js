@@ -11,16 +11,25 @@ $(document).ready(function() {
 
     // Mobile dropdown nav
     let closeNav = $("#fa-close");
+    let openNav = $(".mobile-nav");
     let navbar = $(".nav-links");
     let h = navbar.height();
+    openNav.click(function() {
+        navbar.animate(
+            {
+                top: "0"
+            },
+            250,
+            "linear"
+        );
+    });
     closeNav.click(function() {
-        console.log(h);
         navbar
             .animate(
                 {
-                    top: `-=${h}`
+                    top: "-100%"
                 },
-                300,
+                250,
                 "linear"
             )
             .css("box-shadow", "none");

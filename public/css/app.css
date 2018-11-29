@@ -10580,6 +10580,10 @@ a:hover {
   border: 1px solid #000;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .hide {
   display: hidden;
 }
@@ -10587,7 +10591,6 @@ a:hover {
 .meta-container {
   width: 100%;
   height: 100%;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10598,7 +10601,6 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 1rem;
 }
 
 .my-navbar {
@@ -10606,8 +10608,6 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 2.5rem;
-  min-height: 2.5rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -10615,9 +10615,9 @@ a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .my-navbar .nav-links {
@@ -10631,6 +10631,7 @@ a:hover {
   font-weight: bold;
   text-transform: lowercase;
   font-size: 1rem;
+  padding-top: 15px;
 }
 
 .my-navbar .nav-links #fa-close {
@@ -10659,9 +10660,7 @@ a:hover {
   min-width: 800px;
   height: 100vh;
   min-height: 700px;
-  padding: 5rem;
-  padding-top: 0;
-  margin-top: -1rem;
+  padding: 0 4rem 2.5rem;
 }
 
 .index-page .my-container .big-card {
@@ -10678,7 +10677,7 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 30px;
+  border-radius: 0 0 30px 30px;
   -webkit-box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
           box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
   position: relative;
@@ -10832,12 +10831,19 @@ a:hover {
     display: none;
   }
 
+  .meta-container .mobile-nav {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    background-color: #000;
+  }
+
   .meta-container .my-navbar {
+    height: 0;
     z-index: 99;
   }
 
   .meta-container .my-navbar .nav-links {
-    width: 90%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-orient: vertical;
@@ -10845,9 +10851,9 @@ a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     position: absolute;
-    top: 0;
+    top: -100%;
     border-radius: 0 0 10px 10px;
     background-color: rgba(255, 255, 255, 0.9);
     -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
