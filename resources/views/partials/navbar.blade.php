@@ -10,11 +10,11 @@
       <li class="nav-link"><a href="/contact">Contact</a></li>
       @if(Auth::check())
         <li class="nav-link toggle admin-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <a href="#">Admin</a>
+          <a href="#">Admin <i class="far fa-caret-square-down"></i></a>
         </li>
         <div class="dropdown-menu">
+          <li class="nav-link"><a href="{{ route('dashboard') }}">Dashboard</a></li>
           <li class="nav-link"><a href="/posts/create">Create a Post</a></li>
-          <li class="nav-link"><a href="/dashboard">Dashboard</a></li>
           <div class="dropdown-divider"></div>
           <li class="nav-link"><a href="{{ route('logout') }}"
             onclick="event.preventDefault();
@@ -26,7 +26,7 @@
           </form>
         </div>
       @else
-        <li class="nav-link"><a href="/login">Login</a></li>
+        <li class="nav-link"><a href="/admin/login">Login</a></li>
       @endif
       <li class="nav-link"><i id="fa-close" class="fas fa-window-close"></i></li>
 

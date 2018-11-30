@@ -138,6 +138,9 @@ $stdMinWidth: 800px;
         text-transform: lowercase;
         font-size: 1rem;
         padding-top: 18px;
+        .admin-dropdown {
+            text-transform: uppercase;
+        }
         #fa-close {
             display: none;
         }

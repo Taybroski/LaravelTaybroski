@@ -11,14 +11,16 @@
 |
 */
 
-// User Auth routes
-Auth::routes();
+// User Auth routes - This function prefixes /admin/ 
+Route::group(['prefix' => 'admin'], function () {
+  Auth::routes();
+});
 
 // Pages Controller routes
 Route::get('/', 'PagesController@index');
-Route::get('/contact', 'PagesController@contact');
-Route::get('/portfolio', 'PagesController@portfolio');
-Route::get('/dashboard', 'PagesController@dashboard')->middleware('auth');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio');
+Route::get('/admin/dashboard', 'PagesController@dashboard')->middleware('auth')->name('dashboard');
 
 // Posts Controller routes
 Route::resource('posts', 'PostsController');

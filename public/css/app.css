@@ -10634,6 +10634,10 @@ a:hover {
   padding-top: 18px;
 }
 
+.my-navbar .nav-links .admin-dropdown {
+  text-transform: uppercase;
+}
+
 .my-navbar .nav-links #fa-close {
   display: none;
 }
