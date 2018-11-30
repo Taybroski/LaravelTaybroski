@@ -10580,7 +10580,8 @@ a:hover {
   border: 1px solid #000;
 }
 
-.mobile-nav {
+.mobile-nav,
+.mobile-nav-clear {
   display: none;
 }
 
@@ -10590,7 +10591,6 @@ a:hover {
 
 .meta-container {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10836,9 +10836,19 @@ a:hover {
     background-color: #000;
   }
 
+  .meta-container .mobile-nav-clear {
+    display: block;
+    width: 100%;
+    height: 3rem;
+  }
+
   .meta-container .my-container {
     min-width: 300px;
     padding: 0 1rem 1rem;
+  }
+
+  .meta-container .my-container .mobile-nav {
+    display: none;
   }
 
   .meta-container .my-container .big-card {
@@ -10879,7 +10889,7 @@ a:hover {
   .meta-container .my-container .big-card .index-header .header-container h1 span:nth-child(3) span {
     position: absolute;
     bottom: 0;
-    right: 8%;
+    right: 11%;
   }
 
   .meta-container .my-container .big-card .index-slogan .slogan-container {

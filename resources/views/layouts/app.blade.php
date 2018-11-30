@@ -23,8 +23,9 @@
   
   <div class="meta-container">
     @if (Request::url() !== url('/'))
-      @include('partials.navbar')   
-      <div class="mobile-nav"></div>     
+    @include('partials.navbar')   
+    <div class="mobile-nav"></div>     
+    <div class="mobile-nav-clear"></div>     
     @endif
     @include('partials.messages')
     @yield('content')

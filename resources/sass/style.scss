@@ -108,7 +108,8 @@ $stdMinWidth: 800px;
 .comment {
     border: 1px solid #000;
 }
-.mobile-nav {
+.mobile-nav,
+.mobile-nav-clear {
     display: none;
 }
 .hide {
@@ -118,7 +119,7 @@ $stdMinWidth: 800px;
 // Main Application container
 .meta-container {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -289,11 +290,19 @@ $stdMinWidth: 800px;
             position: fixed;
             background-color: #000;
         }
+        .mobile-nav-clear {
+            display: block;
+            width: 100%;
+            height: 3rem;
+        }
 
         // Index page
         .my-container {
             min-width: 300px;
             padding: 0 1rem 1rem;
+            .mobile-nav {
+                display: none;
+            }
             .big-card {
                 padding: 0;
                 .my-navbar,
@@ -320,20 +329,13 @@ $stdMinWidth: 800px;
                                 span {
                                     position: absolute;
                                     bottom: 0;
-                                    right: 8%;
+                                    right: 11%;
                                 }
                             }
-                            // span:nth-child(4) {
-                            //     position: absolute;
-                            //     width: 300px;
-                            //     top: 48%;
-                            //     left: 37%;
-                            // }
                         }
                     }
                 }
                 .index-slogan {
-                    // justify-content: center !important;
                     .slogan-container {
                         display: none;
                     }

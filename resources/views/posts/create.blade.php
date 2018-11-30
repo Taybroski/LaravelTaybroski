@@ -3,7 +3,7 @@
 
 @section('content')
     
-  <h1>Create a Post Page</h1>
+  <h1 class="page-title">Create a Post Page</h1>
 
   <div class="form-container">
     <form class="my-form" action="/posts" method="POST">
