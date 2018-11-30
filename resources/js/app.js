@@ -1,14 +1,40 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require("./bootstrap");
 
 $(document).ready(function() {
     console.log("ready");
-    let slogan = $(".slogan");
+    // CK Editor - WYSIWYG
+    let editor = $("#editor");
+    if (editor.length) {
+        CKEDITOR.replace("editor");
+    }
+
+    // Mobile dropdown nav
+    let closeNav = $("#fa-close");
+    let openNav = $(".mobile-nav");
+    let navbar = $(".nav-links");
+    let h = navbar.height();
+    openNav.click(function() {
+        navbar.animate(
+            {
+                top: "0"
+            },
+            250,
+            "swing"
+        );
+    });
+    closeNav.click(function() {
+        navbar
+            .animate(
+                {
+                    top: "-100%"
+                },
+                250,
+                "swing"
+            )
+            .css("box-shadow", "none");
+    });
+
+    let slogan = $(".slogan").slideDown();
     let clicks = 0;
     let clickLog = 0;
 
