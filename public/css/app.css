@@ -10560,67 +10560,6 @@ a:hover {
   color: #000;
 }
 
-.meta-container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.my-navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 2.5rem;
-  min-height: 2.5rem;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.my-navbar .nav-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-weight: bold;
-  text-transform: lowercase;
-  font-size: 1.1rem;
-}
-
-.my-navbar .nav-links .nav-link {
-  overflow: auto;
-  margin: 0 5px;
-}
-
-.my-navbar .nav-links .nav-link :hover {
-  -webkit-text-decoration: underline #ff9b0f wavy;
-          text-decoration: underline #ff9b0f wavy;
-}
-
-.my-navbar .nav-links .nav-link a {
-  color: #d8d8d8;
-}
-
 .my-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10641,14 +10580,87 @@ a:hover {
   border: 1px solid #000;
 }
 
+.mobile-nav,
+.mobile-nav-clear {
+  display: none;
+}
+
+.hide {
+  display: hidden;
+}
+
+.meta-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.my-navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.my-navbar .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 1rem;
+  padding-top: 18px;
+}
+
+.my-navbar .nav-links #fa-close {
+  display: none;
+}
+
+.my-navbar .nav-links .nav-link {
+  overflow: auto;
+  margin: 0 5px;
+}
+
+.my-navbar .nav-links .nav-link :hover {
+  -webkit-text-decoration: underline #ff9b0f wavy;
+          text-decoration: underline #ff9b0f wavy;
+}
+
+.my-navbar .nav-links .nav-link a {
+  color: #d8d8d8;
+}
+
 .index-page .my-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  min-width: 800px;
   height: 100vh;
-  min-height: 700px;
-  padding: 2rem;
+  min-height: 650px;
+  padding: 0 4rem 3rem;
 }
 
 .index-page .my-container .big-card {
@@ -10665,9 +10677,9 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 30px;
-  -webkit-box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 30px 30px;
+  -webkit-box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
   position: relative;
 }
 
@@ -10695,7 +10707,6 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
   width: 600px;
-  height: auto;
   margin: 0 auto;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -10712,8 +10723,7 @@ a:hover {
   position: relative;
 }
 
-.index-page .my-container .big-card .index-header h1 span:first-child,
-.index-page .my-container .big-card .index-header h1 span:last-child {
+.index-page .my-container .big-card .index-header h1 span:first-child {
   color: #ff9b0f;
 }
 
@@ -10724,12 +10734,13 @@ a:hover {
 
 .index-page .my-container .big-card .index-header h1 span:nth-child(3) {
   font-size: 14rem;
+  position: relative;
 }
 
-.index-page .my-container .big-card .index-header h1 span:last-child {
+.index-page .my-container .big-card .index-header h1 span:nth-child(3) span {
   position: absolute;
-  top: 35%;
-  right: 8%;
+  bottom: 5%;
+  right: 0;
 }
 
 .index-page .my-container .big-card .index-slogan {
@@ -10803,5 +10814,267 @@ a:hover {
 .index-page .my-container .big-card .index-slogan h2 > span {
   font-weight: bold;
   color: #ff9b0f;
+}
+
+.index-page .my-container .big-card .index-slogan .mobile-index {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .meta-container {
+    position: relative;
+    margin: 0;
+    height: auto;
+    min-height: 650px;
+  }
+
+  .meta-container .mobile-nav {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+  }
+
+  .meta-container .mobile-nav-clear {
+    display: block;
+    width: 100%;
+    height: 3rem;
+  }
+
+  .meta-container .my-container {
+    min-width: 300px;
+    padding: 0 1rem 1rem;
+  }
+
+  .meta-container .my-container .mobile-nav {
+    display: none;
+  }
+
+  .meta-container .my-container .big-card {
+    padding: 0;
+  }
+
+  .meta-container .my-container .big-card .my-navbar,
+  .meta-container .my-container .big-card .nav-links {
+    display: none;
+  }
+
+  .meta-container .my-container .big-card .index-header {
+    height: inherit;
+    overflow: hidden;
+  }
+
+  .meta-container .my-container .big-card .index-header .header-container {
+    height: inherit;
+    width: inherit !important;
+  }
+
+  .meta-container .my-container .big-card .index-header .header-container h1 {
+    height: inherit;
+    position: relative;
+  }
+
+  .meta-container .my-container .big-card .index-header .header-container h1 span:nth-child(3) {
+    position: absolute;
+    bottom: -38%;
+    left: 0;
+    width: 325px;
+    margin-left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 13rem;
+  }
+
+  .meta-container .my-container .big-card .index-header .header-container h1 span:nth-child(3) span {
+    position: absolute;
+    bottom: 0;
+    right: 11%;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .slogan-container {
+    display: none;
+  }
+
+  .meta-container .my-container .big-card .index-slogan h2 {
+    margin-bottom: 1rem;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    width: 100%;
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: inherit;
+        -ms-flex-direction: inherit;
+            flex-direction: inherit;
+    padding: 0 2rem;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog {
+    display: inherit;
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    width: 100%;
+    -webkit-box-orient: inherit;
+    -webkit-box-direction: inherit;
+        -ms-flex-direction: inherit;
+            flex-direction: inherit;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-transform: lowercase;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons a,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper a,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper a,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio a,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog a {
+    color: #ff9b0f;
+    -webkit-text-decoration: underline #d8d8d8 wavy;
+            text-decoration: underline #d8d8d8 wavy;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper {
+    border-radius: 0 0 20px 20px;
+    -webkit-box-shadow: 0px 25px 30px 2px rgba(0, 0, 0, 0.08);
+            box-shadow: 0px 25px 30px 2px rgba(0, 0, 0, 0.08);
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper .btn-portfolio,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper .btn-portfolio,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper .btn-portfolio,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper .btn-portfolio,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper .btn-portfolio {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper {
+    margin-top: 1rem;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper .btn-blog,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper .btn-blog,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper .btn-blog,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper .btn-blog,
+  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper .btn-blog {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .meta-container .my-container .big-card .index-slogan .mobile-index-footer p {
+    font-size: 0.8rem;
+  }
+
+  .my-navbar {
+    height: 0;
+    z-index: 99;
+  }
+
+  .my-navbar .nav-links {
+    width: 90%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    font-size: 1rem;
+    position: absolute;
+    position: fixed;
+    top: -100%;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  .my-navbar .nav-links :hover {
+    text-decoration: none;
+  }
+
+  .my-navbar .nav-links #fa-close {
+    display: block;
+    margin-bottom: 1rem;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-size: 2rem;
+  }
+
+  .my-navbar .nav-links #fa-close:hover {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    text-decoration: none;
+  }
+
+  .my-navbar .nav-links .nav-link a {
+    color: #ff9b0f;
+  }
+
+  .my-navbar .nav-links .nav-link a:hover {
+    text-decoration: none;
+  }
 }
 

@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "ajv": "^6.5.5",
+        "ckeditor": "^4.11.1",
         "imagemin": "^6.0.0"
     }
 }

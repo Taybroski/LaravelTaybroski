@@ -91,32 +91,56 @@ a:hover {
     color: #000;
 }
 
+// Variables and simple styles.
 $lightGrey: #e4e4e4;
 $darkGrey: #d8d8d8;
 $myOrange: #ff9b0f;
-
-.meta-container {
-    width: 100%;
-    height: 100%;
+$stdMinWidth: 800px;
+.my-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+}
+.post {
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+.comment {
+    border: 1px solid #000;
+}
+.mobile-nav,
+.mobile-nav-clear {
+    display: none;
+}
+.hide {
+    display: hidden;
+}
+
+// Main Application container
+.meta-container {
+    width: 100%;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .my-navbar {
     display: flex;
     width: 100%;
-    height: 2.5rem;
-    min-height: 2.5rem;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     .nav-links {
         display: flex;
         flex-direction: row;
         font-weight: bold;
         text-transform: lowercase;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding-top: 18px;
+        #fa-close {
+            display: none;
+        }
         .nav-link {
             overflow: auto;
             margin: 0 5px;
@@ -131,28 +155,15 @@ $myOrange: #ff9b0f;
     }
 }
 
-.my-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.post {
-    width: 50%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-
-.comment {
-    border: 1px solid #000;
-}
-
+// Index / Home page
 .index-page {
     .my-container {
         display: flex;
         width: 100%;
+        min-width: $stdMinWidth;
         height: 100vh;
-        min-height: 700px;
-        padding: 2rem;
+        min-height: 650px;
+        padding: 0 4rem 3rem;
         .big-card {
             display: flex;
             flex-direction: column;
@@ -160,10 +171,9 @@ $myOrange: #ff9b0f;
             height: 100%;
             padding: 1rem;
             align-items: center;
-            border-radius: 30px;
-            box-shadow: 0 10px 75px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
             position: relative;
-
             .index-header {
                 display: flex;
                 width: 100%;
@@ -175,7 +185,6 @@ $myOrange: #ff9b0f;
                 .header-container {
                     display: flex;
                     width: 600px;
-                    height: auto;
                     margin: 0 auto;
                     justify-content: flex-end;
                 }
@@ -187,8 +196,7 @@ $myOrange: #ff9b0f;
                     font-size: 8rem;
                     letter-spacing: -12px;
                     position: relative;
-                    span:first-child,
-                    span:last-child {
+                    span:first-child {
                         color: $myOrange;
                     }
                     span:nth-child(2) {
@@ -197,11 +205,12 @@ $myOrange: #ff9b0f;
                     }
                     span:nth-child(3) {
                         font-size: 14rem;
-                    }
-                    span:last-child {
-                        position: absolute;
-                        top: 35%;
-                        right: 8%;
+                        position: relative;
+                        span {
+                            position: absolute;
+                            bottom: 5%;
+                            right: 0;
+                        }
                     }
                 }
             }
@@ -257,6 +266,179 @@ $myOrange: #ff9b0f;
                 h2 > span {
                     font-weight: bold;
                     color: $myOrange;
+                }
+                .mobile-index {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Main Mobile View
+@media (max-width: 767px) {
+    .meta-container {
+        position: relative;
+        margin: 0;
+        height: auto;
+        min-height: 650px;
+
+        .mobile-nav {
+            display: block;
+            height: 3rem;
+            width: 100%;
+            position: fixed;
+            background-color: #000;
+        }
+        .mobile-nav-clear {
+            display: block;
+            width: 100%;
+            height: 3rem;
+        }
+
+        // Index page
+        .my-container {
+            min-width: 300px;
+            padding: 0 1rem 1rem;
+            .mobile-nav {
+                display: none;
+            }
+            .big-card {
+                padding: 0;
+                .my-navbar,
+                .nav-links {
+                    display: none;
+                }
+                .index-header {
+                    height: inherit;
+                    overflow: hidden;
+                    .header-container {
+                        height: inherit;
+                        width: inherit !important;
+                        h1 {
+                            height: inherit;
+                            position: relative;
+                            span:nth-child(3) {
+                                position: absolute;
+                                bottom: -38%;
+                                left: 0;
+                                width: 325px;
+                                margin-left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 13rem;
+                                span {
+                                    position: absolute;
+                                    bottom: 0;
+                                    right: 11%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .index-slogan {
+                    .slogan-container {
+                        display: none;
+                    }
+                    h2 {
+                        margin-bottom: 1rem;
+                    }
+                    .mobile-index {
+                        display: flex;
+                        flex: 1;
+                        width: 100%;
+                        flex-direction: inherit;
+                        padding: 0 2rem;
+                        .mobile-index-buttons {
+                            justify-content: space-around;
+                        }
+                        .mobile-index-buttons,
+                        .btn-portfolio-wrapper,
+                        .btn-blog-wrapper,
+                        .btn-portfolio,
+                        .btn-blog {
+                            display: inherit;
+                            flex: 4;
+                            width: 100%;
+                            flex-direction: inherit;
+                            align-items: center;
+                            justify-content: center;
+                            text-transform: lowercase;
+                            font-size: 2rem;
+                            font-weight: bold;
+                            a {
+                                color: $myOrange;
+                                text-decoration: underline $darkGrey wavy;
+                            }
+                            .btn-portfolio-wrapper,
+                            .btn-blog-wrapper {
+                                border-radius: 0 0 20px 20px;
+                                box-shadow: 0px 25px 30px 2px
+                                    rgba(0, 0, 0, 0.08);
+                            }
+                            .btn-portfolio-wrapper {
+                                margin-bottom: 1rem;
+                                .btn-portfolio {
+                                    flex: 1;
+                                }
+                            }
+                            .btn-blog-wrapper {
+                                margin-top: 1rem;
+                                .btn-blog {
+                                    flex: 1;
+                                }
+                            }
+                        }
+                    }
+                    .mobile-index-footer {
+                        display: flex;
+                        flex: 1;
+                        justify-content: center;
+                        align-items: center;
+                        p {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .my-navbar {
+        height: 0;
+        z-index: 99;
+        .nav-links {
+            width: 90%;
+            flex-wrap: wrap;
+            flex-direction: column;
+            text-align: center;
+            font-size: 1rem;
+            position: absolute;
+            position: fixed;
+            top: -100%;
+            border-radius: 0 0 10px 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            // filter: blur(5px); Use this style for js onclick.
+            transition: all 0.5s ease;
+            :hover {
+                text-decoration: none;
+            }
+            #fa-close {
+                display: block;
+                margin-bottom: 1rem;
+                transition: all 0.5s ease;
+                font-size: 2rem;
+                &:hover {
+                    transform: rotate(180deg);
+                    text-decoration: none;
+                }
+            }
+            .nav-link {
+                a {
+                    color: $myOrange;
+                    &:hover {
+                        text-decoration: none;
+                    }
                 }
             }
         }
