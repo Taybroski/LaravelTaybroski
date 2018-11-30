@@ -20,7 +20,7 @@ $(document).ready(function() {
                 top: "0"
             },
             250,
-            "linear"
+            "swing"
         );
     });
     closeNav.click(function() {
@@ -30,7 +30,7 @@ $(document).ready(function() {
                     top: "-100%"
                 },
                 250,
-                "linear"
+                "swing"
             )
             .css("box-shadow", "none");
     });

@@ -13717,12 +13717,12 @@ $(document).ready(function () {
     openNav.click(function () {
         navbar.animate({
             top: "0"
-        }, 250, "linear");
+        }, 250, "swing");
     });
     closeNav.click(function () {
         navbar.animate({
             top: "-100%"
-        }, 250, "linear").css("box-shadow", "none");
+        }, 250, "swing").css("box-shadow", "none");
     });
 
     var slogan = $(".slogan").slideDown();
