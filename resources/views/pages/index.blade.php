@@ -6,10 +6,6 @@
     <div class="my-container">
         <div class="big-card">
             @include('partials.navbar')
-            {{-- <div class="tay">
-                <h1>tay<span>.</span></h1>
-            </div>
-            <p class="slogan text-muted">Buy, Sell, Strum, Code.</p> --}}
             
             <div class="index-header">
                 <div class="header-container">
