@@ -11,6 +11,7 @@
 
     <div class="post">
       <br>
+      <a href="/posts/{{ $p->slug }}/edit">Edit</a>
       <h2><a href="/posts/{{ $p->slug }}">{{ $p->title }}</a></h2>    
       <p>{!! $p->body !!}</p>
       <p class="text-muted">Slug: {{ $p->slug }}</p>
