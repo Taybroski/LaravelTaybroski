@@ -11043,7 +11043,7 @@ a:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-    font-size: 1rem;
+    font-size: 2rem;
     position: absolute;
     position: fixed;
     top: -100%;
@@ -11061,10 +11061,10 @@ a:hover {
 
   .my-navbar .nav-links #fa-close {
     display: block;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0 2rem 0;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .my-navbar .nav-links #fa-close:hover {
