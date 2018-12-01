@@ -63,9 +63,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
+        // $post = Post::find($slug);
         return view('posts.show', compact('post'));
     }
 

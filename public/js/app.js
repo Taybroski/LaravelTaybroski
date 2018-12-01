@@ -13706,6 +13706,9 @@ $(document).ready(function () {
     // CK Editor - WYSIWYG
     var editor = $("#editor");
     if (editor.length) {
+        CKEDITOR.editorConfig = function (config) {
+            config.htmlEncodeOutput = true;
+        };
         CKEDITOR.replace("editor");
     }
 

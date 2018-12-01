@@ -23,7 +23,7 @@ Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio');
 Route::get('/admin/dashboard', 'PagesController@dashboard')->middleware('auth')->name('dashboard');
 
 // Posts Controller routes
-Route::resource('posts', 'PostsController');
+Route::resource('posts', 'PostsController'); 
 
 // Comments Controller routes
 Route::resource('comments', 'CommentsController');

@@ -6,6 +6,9 @@ $(document).ready(function() {
     // CK Editor - WYSIWYG
     let editor = $("#editor");
     if (editor.length) {
+        CKEDITOR.editorConfig = function(config) {
+            config.htmlEncodeOutput = true;
+        };
         CKEDITOR.replace("editor");
     }
 

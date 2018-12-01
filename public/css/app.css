@@ -11031,7 +11031,7 @@ a:hover {
 
   .my-navbar {
     height: 0;
-    z-index: 99;
+    z-index: 2;
   }
 
   .my-navbar .nav-links {
@@ -11053,10 +11053,15 @@ a:hover {
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    z-index: 3;
   }
 
   .my-navbar .nav-links :hover {
     text-decoration: none;
+  }
+
+  .my-navbar .nav-links .dropdown-menu {
+    font-size: 1.2rem;
   }
 
   .my-navbar .nav-links #fa-close {

@@ -8,12 +8,12 @@
 
   <div class="post">
     <h1>{{ $post->title }}</h1>
-    <p>{{ $post->body }}</p>
+    <p>{!! $post->body !!}</p>
   
     @foreach ($post->comments as $c)
   
       <div class="comment">
-        <p>{{ $c->body }}</p>
+        <p>{!! $c->body !!}</p>
         <p class="text-muted">{{ $c->author }}</p>
       </div>
         
