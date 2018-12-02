@@ -4,10 +4,13 @@
 
 @section('content')
 
-<h1>Edit Post - {{ $post->id }} / {{ $post->title }}</h1>
+  <div class="page-title">
+    <h1>Edit Post</h1>
+  </div>
 
-<div class="form-container">
+  <div class="form-container">
     <form class="my-form" action="/posts" method="POST">
+      {{ csrf_field('PUT') }}
       {{ csrf_field() }}
       <label for="title">Title</label>
       <input type="text" name="title" value="{{ Request::old('title', $post->title) }}">

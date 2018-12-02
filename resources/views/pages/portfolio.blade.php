@@ -3,6 +3,8 @@
 
 @section('content')
 
-  <h1>Portfolio Page</h1>
+  <div class="page-title">
+    <h1>Portfolio</h1>
+  </div>
     
 @endsection

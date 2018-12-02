@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PagesController extends Controller
 {
@@ -11,9 +12,9 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function contact()
+    public function about()
     {
-        return view('pages.contact');
+        return view('pages.about');
     }
 
     public function portfolio()
@@ -23,6 +24,8 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        return view('pages.dashboard');
+        $posts = Post::all();
+
+        return view('pages.dashboard', compact('posts'));
     }
 }

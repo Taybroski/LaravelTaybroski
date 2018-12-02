@@ -20,15 +20,15 @@
   <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body class="@yield('body_class')">
-  
+    
   <div class="meta-container">
-    @if (Request::url() !== url('/'))
-    @include('partials.navbar')   
-    <div class="mobile-nav"></div>     
-    <div class="mobile-nav-clear"></div>     
-    @endif
-    @include('partials.messages')
-    @yield('content')
+      @if (Request::url() !== url('/'))
+        @include('partials.navbar')   
+        <div class="mobile-nav"></div>     
+        {{-- <div class="mobile-nav-clear"></div> --}}
+      @endif
+      @include('partials.messages')
+      @yield('content')
   </div>
 
 

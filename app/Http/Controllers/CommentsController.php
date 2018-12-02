@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Post;
 use App\Auth;
 
 class CommentsController extends Controller
@@ -11,14 +12,14 @@ class CommentsController extends Controller
 
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function store(Request $request)
     {
         $this->validate(request(), [
             'body' => 'required',
-            'author' => 'required'
+            'author' => 'nullable'
         ]);
 
         $comment = new Comment;
@@ -27,7 +28,8 @@ class CommentsController extends Controller
         $comment->post_id = $request->input('post_id');
         $comment->save();
 
-        return redirect("/posts/".$comment->post_id)->with('success', 'Comment Posted!');
+        $post = Post::find($comment->post_id);
+        return redirect("/posts/".$post->slug)->with('success', 'Comment Posted!');
     }
 
     public function update(Request $request, $id)
@@ -36,7 +38,12 @@ class CommentsController extends Controller
     }
 
     public function destroy($id)
-    {
-        //
+    {        
+        $comment = Comment::find($id);
+        $p = $comment->post_id;
+        $post = Post::find($p);
+        $comment->delete();
+
+        return redirect('/posts/'.$post->slug)->with('success', 'Comment Removed');
     }
 }

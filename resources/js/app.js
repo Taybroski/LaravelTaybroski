@@ -38,22 +38,53 @@ $(document).ready(function() {
             .css("box-shadow", "none");
     });
 
-    let slogan = $(".slogan").slideDown();
-    let clicks = 0;
-    let clickLog = 0;
+    // Confirm delete alert
+    var deleteButton = $("#deleteConfirm");
+    if (deleteButton.length) {
+        deleteButton.click(function(e) {
+            e.preventDefault();
+            if (confirm("Are you sure?")) {
+                // Post the form
+                $(e.target)
+                    .closest("form")
+                    .submit(); // Post the surrounding form
+            } else {
+                return alert("Aborted!");
+            }
+        });
+    } // end Confirm delete
 
-    slogan.click(function() {
-        clicks++;
-        clickLog++;
-        console.log(clicks + ", " + clickLog);
-        slogan.text("Zombie Killer Robots Inc.").css("right", "38px");
-        if (clicks == 2) {
-            slogan.text("Buy, Sell, Strum, Code.").css("right", "32px");
-            clicks = 0;
-        }
-        // Easter egg: 1
-        if (clickLog == 69) {
-            alert("You just clicked this 69 times! You Win! .... Nothing.");
-        }
-    });
-});
+    // Key logger
+    let map = {};
+    onkeydown = onkeyup = function(e) {
+        e = e || event; // to deal with IE
+        map[e.keyCode] = e.type == "keydown";
+        /* insert conditional here */
+        element.innerHTML = "";
+        $("#submitEnter").keypress(function(e) {
+            if (map[16] && map[13]) {
+                return true;
+            } else if (map[13]) {
+                e.preventDefault();
+                $(e.target)
+                    .closest("form")
+                    .submit();
+                return false;
+            }
+        });
+    };
+
+    // Submit input on enter
+    // $("#submitEnter").keypress(function(e) {
+    //     if (event.keyCode == 13 || event.which == 13) {
+    //         e.preventDefault();
+    //         $(e.target)
+    //             .closest("form")
+    //             .submit();
+    //         return false;
+    //     }
+    //     if (event.keyCode == 16 + 13 || event.which == 16 + 13) {
+    //         return true;
+    //     }
+    // }); // end Submit on enter
+}); // End ready function

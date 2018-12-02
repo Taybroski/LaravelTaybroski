@@ -1,7 +1,7 @@
 <div class="mobile-index">
     <div class="mobile-index-buttons">
         <div class="btn-portfolio-wrapper">
-            <li class="btn-portfolio"><a href="{{ route('portfolio') }}">Portfolio</a></li>
+            <li class="btn-portfolio"><a href="{{ route('about') }}">About</a></li>
         </div>
         <div class="btn-blog-wrapper">
             <li class="btn-blog"><a href="/posts">Blog</a></li>

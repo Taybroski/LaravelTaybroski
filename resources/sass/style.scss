@@ -95,18 +95,10 @@ a:hover {
 $lightGrey: #e4e4e4;
 $darkGrey: #d8d8d8;
 $myOrange: #ff9b0f;
-$stdMinWidth: 800px;
+$stdWidth: 800px;
 .my-form {
     display: flex;
     flex-direction: column;
-}
-.post {
-    width: 50%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-.comment {
-    border: 1px solid #000;
 }
 .mobile-nav,
 .mobile-nav-clear {
@@ -115,14 +107,56 @@ $stdMinWidth: 800px;
 .hide {
     display: hidden;
 }
+.my-text-muted {
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+.btn-back {
+    display: flex;
+    font-weight: bold;
+    margin-top: 1rem;
+    i {
+        color: $myOrange;
+        font-size: 1.45rem;
+        margin-right: 5px;
+    }
+}
+%my-maxw {
+    max-width: 900px;
+    margin: 0 auto;
+}
+%my-minw {
+    min-width: 800px;
+}
+
+.delete-icon {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
 
 // Main Application container
 .meta-container {
-    width: 100%;
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    .page-title {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        h1 {
+            font-size: 6rem;
+            text-transform: lowercase;
+            text-decoration: underline $darkGrey wavy;
+            color: $myOrange;
+            line-height: 8rem;
+            font-weight: 200;
+        }
+    }
 }
 
 .my-navbar {
@@ -131,6 +165,7 @@ $stdMinWidth: 800px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    // min-height: 60px;
     .nav-links {
         display: flex;
         flex-direction: row;
@@ -163,7 +198,7 @@ $stdMinWidth: 800px;
     .my-container {
         display: flex;
         width: 100%;
-        min-width: $stdMinWidth;
+        min-width: $stdWidth;
         height: 100vh;
         min-height: 650px;
         padding: 0 4rem 3rem;
@@ -278,6 +313,218 @@ $stdMinWidth: 800px;
     }
 }
 
+// Posts main styling
+.post-container {
+    @extend %my-maxw;
+    width: 750px;
+    height: 100%;
+    flex-direction: column;
+    .post {
+        display: inherit;
+        flex-direction: inherit;
+        box-shadow: 0px 14px 15px rgba(0, 0, 0, 0.07);
+        text-align: center;
+        padding: 0 4rem 2rem;
+        margin-bottom: 4rem;
+        border-radius: 0.3125rem;
+        .post-title-tag-cat {
+            display: flex;
+            margin: 2rem 1rem 1.5rem;
+            min-height: 60px;
+            align-items: center;
+        }
+        .post-title {
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            flex: 1;
+            h2 {
+                color: $darkGrey;
+                font-weight: bold;
+                font-size: 3rem;
+                text-decoration: underline $myOrange dashed;
+            }
+        }
+        .post-labels {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: left;
+            text-transform: lowercase;
+            font-size: 1.2rem;
+            .post-tags,
+            .post-categories {
+                display: flex;
+                flex-wrap: wrap;
+                div {
+                    width: fit-content;
+                    padding: 1px 4px;
+                    border-radius: 4px;
+                    margin: 0 5px 5px 0;
+                }
+                .tag {
+                    background-color: $myOrange;
+                    font-style: italic;
+                    padding-right: 6px;
+                    font-size: 1rem;
+                }
+                .cat {
+                    background-color: $lightGrey;
+                }
+            }
+        }
+
+        .post-social-stats {
+            display: flex;
+            margin-bottom: 0.5rem;
+            i {
+                margin-right: 1rem;
+            }
+
+            .post-created-at {
+                flex: 1;
+                text-align: right;
+                padding-right: 6px;
+            }
+        }
+        .post-body {
+            text-align: left;
+            padding-top: 1rem;
+            margin-bottom: 4rem;
+            text-align: justify;
+            border-top: 2px dashed $myOrange;
+        }
+        .post-sentence {
+            text-align: left;
+        }
+        .post-social-links {
+            display: flex;
+            flex-direction: row;
+            font-size: 3rem;
+            line-height: 1rem;
+            > div {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    .form-comment {
+        textarea,
+        input,
+        button {
+            border: none;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 100px;
+            padding: 5px 0 0 10px;
+        }
+        input {
+            padding: 5px 0 5px 10px;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.posts-index-page {
+    @extend %my-maxw;
+    .post-container {
+        .post {
+            .post-title {
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        text-align: left;
+                    }
+                    .post-carets {
+                        // flex: 1;
+                        color: $myOrange;
+                        text-align: right;
+                        :first-of-type {
+                            margin-left: 1rem;
+                        }
+                        :last-of-type {
+                            margin-left: -0.5rem;
+                        }
+                    }
+                }
+            }
+            .post-body {
+                margin-bottom: 1rem;
+            }
+            .post-labels {
+                flex-direction: row;
+                .post-created-at {
+                    flex: 1;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.posts-show-page {
+    .post-container {
+        .post {
+            margin-bottom: 2rem;
+            // height: 100%;
+            .post-comment-section {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                .form-comment {
+                    flex: 1;
+                    margin-right: 2rem;
+                    .btn-comment-submit {
+                        background: linear-gradient($myOrange 70%, #ff5b7e);
+                    }
+                }
+                .comment-container {
+                    flex: 1;
+                    h2 {
+                        border-bottom: 2px $myOrange dashed;
+                        margin-bottom: 1rem;
+                        font-weight: bold;
+                        text-align: left;
+                    }
+                    .comment {
+                        display: flex;
+                        flex-direction: row;
+                        border-radius: 5px;
+                        min-height: 50px;
+                        box-shadow: 0px 20px 40px -4px rgba(0, 0, 0, 0.08);
+                        margin-bottom: 2rem;
+                        background: linear-gradient(#f8fafc, #fff);
+                        .comment-content {
+                            display: inherit;
+                            flex-direction: column;
+                            flex: 1;
+                        }
+                        form {
+                            align-self: center;
+                            padding-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard-page {
+    @extend %my-maxw;
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        .card {
+            flex: 1;
+        }
+    }
+}
+
 // Main Mobile View
 @media (max-width: 767px) {
     .meta-container {
@@ -289,13 +536,43 @@ $stdMinWidth: 800px;
             display: block;
             height: 3rem;
             width: 100%;
-            position: fixed;
+            // position: fixed;
             background-color: #000;
         }
         .mobile-nav-clear {
             display: block;
             width: 100%;
             height: 3rem;
+        }
+        .post-container {
+            padding: 0 1rem;
+            width: auto;
+            .post {
+                padding: 0 1rem 1rem;
+                .post-title-tag-cat {
+                    flex-direction: column;
+                    margin-top: 1rem;
+                }
+                .post-title {
+                    margin-bottom: 1rem;
+                }
+                .post-body {
+                    margin-bottom: 2rem;
+                }
+                .post-labels {
+                    flex-wrap: wrap;
+                    .post-created-at {
+                        text-align: left;
+                    }
+                }
+                .post-comment-section {
+                    display: flex;
+                    flex-direction: column;
+                    .comment-container {
+                        margin-top: 1rem;
+                    }
+                }
+            }
         }
 
         // Index page
@@ -443,6 +720,18 @@ $stdMinWidth: 800px;
                     color: $myOrange;
                     &:hover {
                         text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .posts-show-page {
+        .post-container {
+            .post {
+                .post-title-tag-cat {
+                    margin: 1rem 0 1rem;
+                    .post-labels {
+                        align-self: flex-end;
                     }
                 }
             }
