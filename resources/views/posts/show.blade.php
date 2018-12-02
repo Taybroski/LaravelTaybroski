@@ -16,9 +16,9 @@
             <div class="cat">Category</div>
           </div>
           <div class="post-tags">
-            <div class="tag">Tag</div>
-            <div class="tag">Tag</div>
-            <div class="tag">Tag</div>
+             @foreach ($post->tags as $tag)
+                <div class="tag">{{ $tag->name }}</div>
+            @endforeach
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
               <form action="/comments/{{ $c->id }}" method="POST">
                 @method('DELETE')
                 @csrf
-                <button id="deleteConfirm" class="delete-icon" type="submit"><i class="far fa-trash-alt"></i></button>
+                <button class="delete-icon deleteConfirm" type="submit"><i class="far fa-trash-alt"></i></button>
               </form>
             </div>
           @endforeach 

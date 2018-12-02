@@ -57,4 +57,9 @@ class Post extends Model
             'post_id' => $this->id
         ]);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

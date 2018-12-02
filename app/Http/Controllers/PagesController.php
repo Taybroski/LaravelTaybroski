@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Post;
+use App\Tag;
 
 class PagesController extends Controller
 {
@@ -25,7 +27,8 @@ class PagesController extends Controller
     public function dashboard()
     {
         $posts = Post::all();
+        $tags = Tag::all();
 
-        return view('pages.dashboard', compact('posts'));
+        return view('pages.dashboard', compact(['posts', 'tags']));
     }
 }

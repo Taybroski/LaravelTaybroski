@@ -33,9 +33,9 @@
             <div class="cat">Category</div>
           </div>
           <div class="post-tags">
-            <div class="tag">Tag</div>
-            <div class="tag">Tag</div>
-            <div class="tag">Tag</div>
+            @foreach ($p->tags as $tag)
+                <div class="tag">{{ $tag->name }}</div>
+            @endforeach
           </div>
           <div class="post-created-at">
             <p class="my-text-muted">{{ \Carbon\Carbon::parse($p->created_at)->format('LS F Y') }}</p>
