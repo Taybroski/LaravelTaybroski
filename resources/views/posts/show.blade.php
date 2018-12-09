@@ -11,10 +11,10 @@
           <h2>{{ $post->title }}</h2>
         </div>  
         <div class="post-labels">
-          <div class="post-categories">
+          {{-- <div class="post-categories">
             <div class="cat">Category</div>
             <div class="cat">Category</div>
-          </div>
+          </div> --}}
           <div class="post-tags">
              @foreach ($post->tags as $tag)
                 <div class="tag">{{ $tag->name }}</div>
@@ -46,16 +46,22 @@
         <p class="my-text-muted">Liked this? Leave a comment or share the post!</p>
       </div>
       <div class="post-social-links">
-        <div class="post-facebook">
-          <a href="#">
-            <i class="fab fa-facebook-square"></i>
-          </a>
-        </div>
-        <div class="post-twitter">
-          <a href="#">
-            <i class="fab fa-twitter-square"></i>
-          </a>
-        </div>
+        <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+        <div class="addthis_toolbox addthis_inline_share_toolbox" 
+             addthis:url="{{ URL::current() }}" 
+             addthis:title="{!! $post->title !!}" 
+             addthis:description="{!! $post->body !!}"></div>
+
+          {{-- <div class="post-facebook">
+            <a href="#">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+          </div>
+          <div class="post-twitter">
+            <a href="#">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+          </div> --}}
       </div>     
 
       <div class="post-comment-section">
@@ -63,7 +69,7 @@
           {{ csrf_field() }}
           <label for="body"></label>
           <textarea id="submitEnter" name="body" cols="30" rows="10" placeholder="Reply..." required></textarea>
-          <input type="text" name="author" placeholder="Your name here (Optionial, but brave)">
+          <input type="text" name="author" placeholder="Your name here (Optional, but brave)">
           <input type="hidden" name="post_id" value="{{ $post->id }}">
           <button class="btn-comment-submit" type="submit">Post Comment</button>
         </form>

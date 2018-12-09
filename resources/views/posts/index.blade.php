@@ -31,10 +31,10 @@
         </div>    
         
         <div class="post-labels">
-          <div class="post-categories">
+          {{-- <div class="post-categories">
             <div class="cat">Category</div>
             <div class="cat">Category</div>
-          </div>
+          </div> --}}
           <div class="post-tags">
             @foreach ($p->tags as $tag)
                 <div class="tag">{{ $tag->name }}</div>
@@ -46,7 +46,7 @@
         </div>
       </div>      
     @endforeach
-
+    <a class="btn-back" href="{{ url('/') }}"><i class="fas fa-caret-left"></i> Back</a>
   </div>
 </div>
 

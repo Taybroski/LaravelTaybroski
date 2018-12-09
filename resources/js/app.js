@@ -3,13 +3,6 @@ require("./bootstrap");
 $(document).ready(function() {
     console.log("ready");
 
-    // Check for Geolocaiton
-    // if ("geolocation" in navigator) {
-    //     alert("Geolocation active");
-    // } else {
-    //     alert("No Geolocation");
-    // }
-
     // CK Editor - WYSIWYG
     let editor = $("#editor");
     if (editor.length) {
@@ -210,7 +203,7 @@ $(document).ready(function() {
                         weatherDetails.html(`
                             <div class="weather-left">
                                     <p>Location:</p>
-                                    <p>Description</p>
+                                    <p>Description:</p>
                                     <p>Temp:</p>
                                     <p>Wind:</p>
                                     <p>Pressure:</p>

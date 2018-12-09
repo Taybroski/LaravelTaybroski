@@ -128,6 +128,9 @@ $stdWidth: 800px;
         margin-right: 5px;
     }
 }
+%gradient-orange {
+    background: linear-gradient($myOrange 70%, #ff5b7e);
+}
 %my-maxw {
     max-width: 900px;
     margin: 0 auto;
@@ -450,7 +453,7 @@ $stdWidth: 800px;
         }
     }
     .dashboard-container {
-        min-width: 50rem;
+        width: 55rem;
         .card {
             margin-bottom: 1rem;
             .card-header {
@@ -609,7 +612,7 @@ $stdWidth: 800px;
                     flex: 1;
                     margin-right: 2rem;
                     .btn-comment-submit {
-                        background: linear-gradient($myOrange 70%, #ff5b7e);
+                        @extend %gradient-orange;
                     }
                 }
                 .comment-container {
@@ -659,34 +662,100 @@ $stdWidth: 800px;
 
 // Main Mobile View
 @media (max-width: 767px) {
+    * {
+        min-width: 0;
+    }
     .meta-container {
         position: relative;
         margin: 0;
         height: auto;
-        min-height: 650px;
+        // min-height: 650px;
+
         .dashboard-container {
-            min-width: auto;
+            width: fill-available;
+            .card-header {
+                flex-wrap: wrap;
+            }
             .feed-container {
                 .card-body {
                     .dual-api-container {
                         display: flex;
                         flex-direction: column;
+                        .api-weather {
+                            margin-right: 0;
+                            .card-body {
+                                padding: 0.8rem;
+                            }
+                        }
+                        .api-map {
+                            .map-container {
+                                height: 250px;
+                                max-height: 300px;
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+                .waka-lang-wrapper,
+                .waka-time-wrapper {
+                    flex-direction: column;
+                    .waka-lang-list {
+                        ul {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            .tags-container {
+                flex-direction: column-reverse;
+                .tags {
+                    margin-bottom: 1rem;
+                    .my-card-list {
+                        li {
+                            padding-right: 3rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+                form {
+                    input[type="text"] {
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding-left: 0.5rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+        @media (max-width: 400px) {
+            .posts-table-container {
+                table {
+                    thead {
+                        th:nth-child(3),
+                        th:nth-child(4),
+                        th:nth-child(5),
+                        th:nth-child(7) {
+                            display: none;
+                        }
                     }
                 }
             }
         }
 
         .mobile-nav {
+            background: linear-gradient(#ff9b0f 50%, #ff5b43);
             display: block;
             height: 3rem;
             width: 100%;
             // position: fixed;
-            background-color: #000;
         }
         .mobile-nav-clear {
             display: block;
             width: 100%;
             height: 3rem;
+        }
+        .posts-index {
+            width: 100%;
         }
         .post-container {
             padding: 0 1rem;
@@ -712,8 +781,14 @@ $stdWidth: 800px;
                 .post-comment-section {
                     display: flex;
                     flex-direction: column;
+                    form {
+                        margin-right: 0 !important;
+                    }
                     .comment-container {
                         margin-top: 1rem;
+                        .comment {
+                            margin-bottom: 1.5rem;
+                        }
                     }
                 }
             }

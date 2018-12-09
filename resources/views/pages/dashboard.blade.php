@@ -126,7 +126,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body posts-table-container">
                             <table class="table table-striped text-center">
                                 <thead>
                                     <tr>
@@ -196,8 +196,8 @@
                                         <form class="my-form" action="/tags" method="POST">
                                             {{ csrf_field() }}
                                             <label for="name"></label>
-                                            <input type="text" name="name">
-                                            <button type="submit">Add Tag</button>
+                                            <input type="text" name="name" placeholder="Type one at a time">
+                                            <button class="btn btn-info" type="submit">Add Tag</button>
                                         </form>
                                     </div>
                                     <div class="tags">

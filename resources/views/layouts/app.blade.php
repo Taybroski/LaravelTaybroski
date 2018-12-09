@@ -17,7 +17,9 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>  
+    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script> 
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0d452425e4cf04"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
     <body class="@yield('body_class')">

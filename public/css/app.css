@@ -10607,6 +10607,11 @@ ul {
   margin-right: 5px;
 }
 
+.posts-show-page .post-container .post .post-comment-section .form-comment .btn-comment-submit {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #ff9b0f), to(#ff5b7e));
+  background: linear-gradient(#ff9b0f 70%, #ff5b7e);
+}
+
 .post-container,
 .posts-index-page,
 .dashboard-page {
@@ -11076,7 +11081,7 @@ ul {
 }
 
 .dashboard-page .dashboard-container {
-  min-width: 50rem;
+  width: 55rem;
 }
 
 .dashboard-page .dashboard-container .card {
@@ -11318,11 +11323,6 @@ ul {
   margin-right: 2rem;
 }
 
-.posts-show-page .post-container .post .post-comment-section .form-comment .btn-comment-submit {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, #ff9b0f), to(#ff5b7e));
-  background: linear-gradient(#ff9b0f 70%, #ff5b7e);
-}
-
 .posts-show-page .post-container .post .post-comment-section .comment-container {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -11389,15 +11389,25 @@ ul {
 }
 
 @media (max-width: 767px) {
+  * {
+    min-width: 0;
+  }
+
   .meta-container {
     position: relative;
     margin: 0;
     height: auto;
-    min-height: 650px;
   }
 
   .meta-container .dashboard-container {
-    min-width: auto;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: fill-available;
+  }
+
+  .meta-container .dashboard-container .card-header {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .meta-container .dashboard-container .feed-container .card-body .dual-api-container {
@@ -11410,17 +11420,83 @@ ul {
             flex-direction: column;
   }
 
+  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-weather {
+    margin-right: 0;
+  }
+
+  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-weather .card-body {
+    padding: 0.8rem;
+  }
+
+  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-map .map-container {
+    height: 250px;
+    max-height: 300px;
+    width: auto;
+  }
+
+  .meta-container .dashboard-container .feed-container .waka-lang-wrapper,
+  .meta-container .dashboard-container .feed-container .waka-time-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .meta-container .dashboard-container .feed-container .waka-lang-wrapper .waka-lang-list ul,
+  .meta-container .dashboard-container .feed-container .waka-time-wrapper .waka-lang-list ul {
+    height: auto;
+  }
+
+  .meta-container .dashboard-container .tags-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .meta-container .dashboard-container .tags-container .tags {
+    margin-bottom: 1rem;
+  }
+
+  .meta-container .dashboard-container .tags-container .tags .my-card-list li {
+    padding-right: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .meta-container .dashboard-container .tags-container form input[type="text"] {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 767px) and (max-width: 400px) {
+  .meta-container .posts-table-container table thead th:nth-child(3),
+  .meta-container .posts-table-container table thead th:nth-child(4),
+  .meta-container .posts-table-container table thead th:nth-child(5),
+  .meta-container .posts-table-container table thead th:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
   .meta-container .mobile-nav {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff9b0f), to(#ff5b43));
+    background: linear-gradient(#ff9b0f 50%, #ff5b43);
     display: block;
     height: 3rem;
     width: 100%;
-    background-color: #000;
   }
 
   .meta-container .mobile-nav-clear {
     display: block;
     width: 100%;
     height: 3rem;
+  }
+
+  .meta-container .posts-index {
+    width: 100%;
   }
 
   .meta-container .post-container {
@@ -11467,8 +11543,16 @@ ul {
             flex-direction: column;
   }
 
+  .meta-container .post-container .post .post-comment-section form {
+    margin-right: 0 !important;
+  }
+
   .meta-container .post-container .post .post-comment-section .comment-container {
     margin-top: 1rem;
+  }
+
+  .meta-container .post-container .post .post-comment-section .comment-container .comment {
+    margin-bottom: 1.5rem;
   }
 
   .meta-container .my-container {

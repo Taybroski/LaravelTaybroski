@@ -13703,13 +13703,6 @@ __webpack_require__(12);
 $(document).ready(function () {
     console.log("ready");
 
-    // Check for Geolocaiton
-    // if ("geolocation" in navigator) {
-    //     alert("Geolocation active");
-    // } else {
-    //     alert("No Geolocation");
-    // }
-
     // CK Editor - WYSIWYG
     var editor = $("#editor");
     if (editor.length) {
@@ -13887,7 +13880,7 @@ $(document).ready(function () {
                     console.log(data);
 
                     loader.css("display", "none");
-                    weatherDetails.html("\n                            <div class=\"weather-left\">\n                                    <p>Location:</p>\n                                    <p>Description</p>\n                                    <p>Temp:</p>\n                                    <p>Wind:</p>\n                                    <p>Pressure:</p>\n                                    <p>Humidity:</p>\n                                    <p>Sunrise:</p>\n                                    <p>Sunset:</p>\n                                </div>\n                                <div class=\"weather-right\">\n                                    <p>" + data.name + ", " + sys.country + "</p>\n                                    <p>" + weath.main + ", " + weath.description + "</p>\n                                    <p>" + main.temp + "&deg;</p>\n                                    <p>" + wind.speed + "mph</p>\n                                    <p>" + main.pressure + "mb</p>\n                                    <p>" + main.humidity + "%</p>\n                                    <p>" + sunrise + "</p>\n                                    <p>" + sunset + "</p>\n                                </div>\n                            ");
+                    weatherDetails.html("\n                            <div class=\"weather-left\">\n                                    <p>Location:</p>\n                                    <p>Description:</p>\n                                    <p>Temp:</p>\n                                    <p>Wind:</p>\n                                    <p>Pressure:</p>\n                                    <p>Humidity:</p>\n                                    <p>Sunrise:</p>\n                                    <p>Sunset:</p>\n                                </div>\n                                <div class=\"weather-right\">\n                                    <p>" + data.name + ", " + sys.country + "</p>\n                                    <p>" + weath.main + ", " + weath.description + "</p>\n                                    <p>" + main.temp + "&deg;</p>\n                                    <p>" + wind.speed + "mph</p>\n                                    <p>" + main.pressure + "mb</p>\n                                    <p>" + main.humidity + "%</p>\n                                    <p>" + sunrise + "</p>\n                                    <p>" + sunset + "</p>\n                                </div>\n                            ");
                 }
             });
         }, function () {
