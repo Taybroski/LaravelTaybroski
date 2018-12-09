@@ -179,7 +179,7 @@ $(document).ready(function() {
                 let lat = pos.lat;
                 let lon = pos.lng;
                 let owmApiKey = "29ea1d615b68f7299dd1826274565af4";
-                let owmQuery = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${owmApiKey}`;
+                let owmQuery = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${owmApiKey}`;
                 console.log("Weather here!");
                 $.ajax({
                     type: "GET",
