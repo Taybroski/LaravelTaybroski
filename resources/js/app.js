@@ -162,6 +162,16 @@ $(document).ready(function() {
         return a + b;
     }
 
+    // Check for geolocation if dashboard present
+    let dashboard = $(".dashboard-page");
+    if (dashboard.length) {
+        if ($("body").width() <= 400) {
+            if (confirm("Allow location tracking")) {
+                navigator.geolocation;
+            }
+        }
+    }
+
     // OpenWeatherMapAPI
     let weatherContainer = $(".api-weather");
     if (weatherContainer.length && navigator.geolocation) {
