@@ -3,6 +3,13 @@ require("./bootstrap");
 $(document).ready(function() {
     console.log("ready");
 
+    // Check for Geolocaiton
+    // if ("geolocation" in navigator) {
+    //     alert("Geolocation active");
+    // } else {
+    //     alert("No Geolocation");
+    // }
+
     // CK Editor - WYSIWYG
     let editor = $("#editor");
     if (editor.length) {
@@ -55,18 +62,16 @@ $(document).ready(function() {
     } // end Confirm delete
 
     // Key logger
-    let map = {};
+    let keys = {};
     onkeydown = onkeyup = function(e) {
         e = e || event; // to deal with IE
-        map[e.keyCode] = e.type == "keydown";
+        keys[e.keyCode] = e.type == "keydown";
         /* insert conditional here */
-        element.innerHTML = "";
-
         // Submit on enter
         $("#submitEnter").keypress(function(e) {
-            if (map[16] && map[13]) {
+            if (keys[16] && keys[13]) {
                 return true;
-            } else if (map[13]) {
+            } else if (keys[13]) {
                 e.preventDefault();
                 $(e.target)
                     .closest("form")
@@ -76,7 +81,7 @@ $(document).ready(function() {
         }); // End submit on enter
     }; // Ent Keylogger
 
-    // Wakatime API stats
+    // Wakatime API
     let wakatime = $("#wakatime");
     let wakaStats = $("#waka-stats");
     if (wakatime) {
@@ -89,13 +94,11 @@ $(document).ready(function() {
         let wakaTime = $("#waka-time");
         let week = [];
         let day = [];
+        let timeStr = "";
         $.ajax({
             type: "GET",
             url: act,
             dataType: "jsonp",
-            beforeSend: function() {
-                wakaTime.html("Loading...");
-            },
             success: function(response) {
                 // Map Wakatime response and push to week object.
                 $.map(response, function(data) {
@@ -121,13 +124,14 @@ $(document).ready(function() {
                 let mins = Math.floor(rmns); // Format remaining minutes
 
                 // Inject into Dashboard HTML
-                wakaTime.text(hours + " hours, " + mins + " minutes");
+                timeStr += timeTemplate(hours, mins);
+                wakaTime.html(timeStr).css("margin-left", "1rem");
             }
         }); // end Coding Activity
 
-        // Add function, used with the .reduce() function
-        function add(a, b) {
-            return a + b;
+        // Returns the time data with html
+        function timeTemplate(hours, mins) {
+            return `<i class="far fa-clock mr-2"></i><p>${hours} Hours, ${mins} Minutes`;
         }
 
         // Languages
@@ -139,9 +143,6 @@ $(document).ready(function() {
             type: "GET",
             url: langs,
             dataType: "jsonp",
-            beforeSend: function() {
-                wakaList.html("Loading...");
-            },
             success: function(response) {
                 $.map(response, function(data) {
                     for (let i = 0; i < data.length; i++) {
@@ -157,10 +158,39 @@ $(document).ready(function() {
                 wakaList.html(langStr);
             }
         }); // End Lnaguage
+
+        // Returns an li for the wakatime language API
         function languageTemplate(name, percent) {
-            return `            
-                <li>${name} - ${percent}%</div>
-            `;
+            return `<li><i class="fas fa-caret-right mr-2"></i>${name} - ${percent}%</div>`;
         }
-    } // end Wakatime API stats
+    } // end Wakatime API
+
+    // Add function, used with the .reduce() function
+    function add(a, b) {
+        return a + b;
+    }
+
+    // OpenWeatherMapAPI
+    let weatherContainer = $(".api-weather");
+    if (weatherContainer.length) {
+        let lat = 49.214439;
+        let lon = -2.13125;
+        let owmApiKey = "29ea1d615b68f7299dd1826274565af4";
+        let owmQuery = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${owmApiKey}`;
+        console.log("Weather here!");
+        $.ajax({
+            type: "GET",
+            url: owmQuery,
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+            }
+        });
+    }
+
+    // Dashboard date and time
+    function updateTime() {
+        $(".date-time").html(moment().format("h:mm:ssa - dddd, Do MMMM "));
+    }
+    setInterval(updateTime, 1000);
 }); // End ready function

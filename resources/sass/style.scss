@@ -138,6 +138,12 @@ $stdWidth: 800px;
     background-color: transparent;
     cursor: pointer;
 }
+#loader {
+    font-weight: bold;
+    margin-left: 1rem;
+    width: 22px;
+    height: 22px;
+}
 
 // Main Application container
 .meta-container {
@@ -435,37 +441,96 @@ $stdWidth: 800px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 100px;
+        height: 100px;
         li {
             display: flex;
         }
     }
     .dashboard-container {
+        min-width: 50rem;
         .card {
             margin-bottom: 1rem;
-        }
-        .waka-stats {
-            p {
-                text-align: right;
-                width: 100px;
-            }
-            .waka-week-wrapper {
+            .card-header {
                 display: flex;
-                #waka-time {
-                    margin-left: 1rem;
+                flex-direction: row;
+            }
+        }
+        .feed-container {
+            .dual-api-container {
+                display: flex;
+                flex-direction: row;
+                .api-weather {
+                    margin-right: 1rem;
+                }
+                .api-map {
+                    .card-header {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    .map-container {
+                        width: 300px;
+                        height: 300px;
+                        margin: 0 auto;
+                        #map {
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #000;
+                        }
+                    }
                 }
             }
-            .waka-lang-wrapper {
-                display: flex;
-                // flex-direction: row;
-                .waka-lang-list {
+            .waka-stats {
+                p {
+                    text-align: right;
+                    width: 100px;
+                }
+                .waka-time-wrapper {
                     display: flex;
-                    flex: 1;
-                    #waka-list {
+                    margin-bottom: 1rem;
+                    #waka-time {
+                        display: flex;
                         flex: 1;
-                        li {
-                            margin-left: 1rem;
+                        align-items: center;
+                        #loader {
+                            margin-right: 100%;
                         }
+                        p {
+                            flex: 1;
+                            text-align: left;
+                        }
+                    }
+                }
+                .waka-lang-wrapper {
+                    display: flex;
+                    // flex-direction: row;
+                    .waka-lang-list {
+                        display: flex;
+                        // flex: 1;
+                        #waka-list {
+                            flex: 1;
+                            li {
+                                margin-left: 1rem;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .tags-container {
+            display: flex;
+            flex-direction: row;
+            .add-tag {
+                flex: 1;
+            }
+            .tags {
+                flex: 2;
+                padding-left: 2rem;
+                ul {
+                    li {
+                        width: 50%;
+                        justify-content: flex-end;
+                        padding-right: 1rem;
                     }
                 }
             }
@@ -541,7 +606,7 @@ $stdWidth: 800px;
                         flex-direction: row;
                         border-radius: 5px;
                         min-height: 50px;
-                        box-shadow: 0px 20px 30px -4px rgba(0, 0, 0, 0.08);
+                        box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.08);
                         margin-bottom: 2rem;
                         background: linear-gradient(#f8fafc, #fff);
                         .comment-content {
@@ -549,7 +614,7 @@ $stdWidth: 800px;
                             flex-direction: column;
                             flex: 1;
                             text-align: left;
-                            padding-left: 15;
+                            padding: 5px 15px;
                         }
                         form {
                             align-self: center;

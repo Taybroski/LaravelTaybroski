@@ -11,6 +11,9 @@
   
   <div class="post-container">
 
+    @if (count($posts) == 0)
+        <h1>No Posts... Yet</h1>
+    @endif
     @foreach ($posts as $p)
       <div class="post">
         <div class="post-title">

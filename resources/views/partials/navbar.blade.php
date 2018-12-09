@@ -7,7 +7,7 @@
       <li class="nav-link"><a href="/">Home</a></li>
       {{-- <li class="nav-link"><a href="/portfolio">Portfolio</a></li> --}}
       <li class="nav-link"><a href="/posts">Blog</a></li>
-      <li class="nav-link"><a href="{{ route('about') }}">About</a></li>
+      {{-- <li class="nav-link"><a href="{{ route('about') }}">About</a></li> --}}
       @if(Auth::check())
         <li class="nav-link toggle admin-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <a href="#">Admin <i class="far fa-caret-square-down"></i></a>

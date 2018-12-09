@@ -10616,6 +10616,13 @@ ul {
   cursor: pointer;
 }
 
+#loader {
+  font-weight: bold;
+  margin-left: 1rem;
+  width: 22px;
+  height: 22px;
+}
+
 .meta-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11055,7 +11062,7 @@ ul {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-height: 100px;
+  height: 100px;
 }
 
 .dashboard-page .my-card-list li {
@@ -11064,48 +11071,149 @@ ul {
   display: flex;
 }
 
+.dashboard-page .dashboard-container {
+  min-width: 50rem;
+}
+
 .dashboard-page .dashboard-container .card {
   margin-bottom: 1rem;
 }
 
-.dashboard-page .dashboard-container .waka-stats p {
+.dashboard-page .dashboard-container .card .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather {
+  margin-right: 1rem;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-map .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-map .map-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-map .map-container #map {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+}
+
+.dashboard-page .dashboard-container .feed-container .waka-stats p {
   text-align: right;
   width: 100px;
 }
 
-.dashboard-page .dashboard-container .waka-stats .waka-week-wrapper {
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-time-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 1rem;
 }
 
-.dashboard-page .dashboard-container .waka-stats .waka-week-wrapper #waka-time {
-  margin-left: 1rem;
-}
-
-.dashboard-page .dashboard-container .waka-stats .waka-lang-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.dashboard-page .dashboard-container .waka-stats .waka-lang-wrapper .waka-lang-list {
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-time-wrapper #waka-time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.dashboard-page .dashboard-container .waka-stats .waka-lang-wrapper .waka-lang-list #waka-list {
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-time-wrapper #waka-time #loader {
+  margin-right: 100%;
+}
+
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-time-wrapper #waka-time p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: left;
+}
+
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-lang-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-lang-wrapper .waka-lang-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-lang-wrapper .waka-lang-list #waka-list {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.dashboard-page .dashboard-container .waka-stats .waka-lang-wrapper .waka-lang-list #waka-list li {
+.dashboard-page .dashboard-container .feed-container .waka-stats .waka-lang-wrapper .waka-lang-list #waka-list li {
   margin-left: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard-page .dashboard-container .tags-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-page .dashboard-container .tags-container .add-tag {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dashboard-page .dashboard-container .tags-container .tags {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding-left: 2rem;
+}
+
+.dashboard-page .dashboard-container .tags-container .tags ul li {
+  width: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 1rem;
 }
 
 .posts-index-page .post-container .post .post-title a {
@@ -11205,8 +11313,8 @@ ul {
           flex-direction: row;
   border-radius: 5px;
   min-height: 50px;
-  -webkit-box-shadow: 0px 20px 30px -4px rgba(0, 0, 0, 0.08);
-          box-shadow: 0px 20px 30px -4px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.08);
   margin-bottom: 2rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#f8fafc), to(#fff));
   background: linear-gradient(#f8fafc, #fff);
@@ -11222,7 +11330,7 @@ ul {
       -ms-flex: 1;
           flex: 1;
   text-align: left;
-  padding-left: 15;
+  padding: 5px 15px;
 }
 
 .posts-show-page .post-container .post .post-comment-section .comment-container .comment form {
