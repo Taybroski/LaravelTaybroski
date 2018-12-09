@@ -41,7 +41,7 @@
             @endforeach
           </div>
           <div class="post-created-at">
-            <p class="my-text-muted">{{ \Carbon\Carbon::parse($p->created_at)->format('LS F Y') }}</p>
+            <p class="my-text-muted">{{ \Carbon\Carbon::parse($p->created_at)->format('dS F Y') }}</p>
           </div>
         </div>
       </div>      
