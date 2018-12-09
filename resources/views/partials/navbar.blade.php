@@ -26,7 +26,7 @@
           </form>
         </div>
       @else
-        <li class="nav-link"><a href="/admin/login">Login</a></li>
+        {{-- <li class="nav-link"><a href="/admin/login">Login</a></li> --}}
       @endif
-      <li class="nav-link"><i id="fa-close" class="fas fa-window-close"></i></li>
+      <li class="nav-link display-none"><i id="fa-close" class="fas fa-window-close"></i></li>
   </nav>

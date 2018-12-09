@@ -172,20 +172,77 @@ $(document).ready(function() {
 
     // OpenWeatherMapAPI
     let weatherContainer = $(".api-weather");
-    if (weatherContainer.length) {
-        let lat = 49.214439;
-        let lon = -2.13125;
-        let owmApiKey = "29ea1d615b68f7299dd1826274565af4";
-        let owmQuery = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${owmApiKey}`;
-        console.log("Weather here!");
-        $.ajax({
-            type: "GET",
-            url: owmQuery,
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
+    if (weatherContainer.length && navigator.geolocation) {
+        let weatherDetails = $("#weather-details");
+        let loader = $(".weather-loader");
+        let weatherStr = "";
+
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                let lat = pos.lat;
+                let lon = pos.lng;
+                let owmApiKey = "29ea1d615b68f7299dd1826274565af4";
+                let owmQuery = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${owmApiKey}`;
+                console.log("Weather here!");
+                $.ajax({
+                    type: "GET",
+                    url: owmQuery,
+                    dataType: "json",
+                    success: function(data) {
+                        let main = data.main;
+                        let sys = data.sys;
+                        let weath = data.weather[0];
+                        let wind = data.wind;
+                        let sunrise = new moment.unix(sys.sunrise).format(
+                            "H:mm:ss a"
+                        );
+
+                        let sunset = new moment.unix(sys.sunset).format(
+                            "H:mm:ss a"
+                        );
+                        console.log(data);
+
+                        loader.css("display", "none");
+                        weatherDetails.html(`
+                            <div class="weather-left">
+                                    <p>Location:</p>
+                                    <p>Description</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Pressure:</p>
+                                    <p>Humidity:</p>
+                                    <p>Sunrise:</p>
+                                    <p>Sunset:</p>
+                                </div>
+                                <div class="weather-right">
+                                    <p>${data.name}, ${sys.country}</p>
+                                    <p>${weath.main}, ${weath.description}</p>
+                                    <p>${main.temp}&deg;</p>
+                                    <p>${wind.speed}mph</p>
+                                    <p>${main.pressure}mb</p>
+                                    <p>${main.humidity}%</p>
+                                    <p>${sunrise}</p>
+                                    <p>${sunset}</p>
+                                </div>
+                            `);
+                    }
+                });
+            },
+
+            function() {
+                handleLocationError(true);
             }
-        });
+        );
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(
+            false,
+            alert("Browser doesn't support Geolocation")
+        );
     }
 
     // Dashboard date and time

@@ -39,6 +39,8 @@
 
         var mapContainer = $(".map-container");
         var loader = $(".map-loader");  
+        var mapLat = $(".map-lat");
+        var mapLng = $(".map-lng");
         if (mapContainer.length) {
             console.log("Map Here");
          
@@ -60,7 +62,7 @@
                 // Geolocation - Moves  google map pin to current location.
                 infoWindow = new google.maps.InfoWindow();
                 // HTML5 geolocation.
-                if (confirm("Allow location tracking for Google Map")) {
+                if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(
                         function(position) {                                     
                             var pos = {
@@ -73,6 +75,8 @@
                             map.setCenter(pos);
                             // Remove loader 
                             loader.css("display", "none");
+                            mapLat.html(pos.lat);
+                            mapLng.html(pos.lng);
                         },
                         function() {
                             handleLocationError(true, infoWindow, map.getCenter());

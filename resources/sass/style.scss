@@ -115,6 +115,9 @@ $stdWidth: 800px;
     font-size: 0.8rem;
     font-style: italic;
 }
+.display-none {
+    display: none;
+}
 .btn-back {
     display: flex;
     font-weight: bold;
@@ -458,9 +461,22 @@ $stdWidth: 800px;
         .feed-container {
             .dual-api-container {
                 display: flex;
-                flex-direction: row;
+                // flex-direction: row;
                 .api-weather {
                     margin-right: 1rem;
+                    #weather-details.card-body {
+                        display: flex;
+                        flex-direction: row;
+                        .weather-left {
+                            text-align: right;
+                        }
+                        .weather-right {
+                            text-align: left;
+                            p {
+                                margin-left: 1rem;
+                            }
+                        }
+                    }
                 }
                 .api-map {
                     .card-header {
@@ -525,12 +541,15 @@ $stdWidth: 800px;
             }
             .tags {
                 flex: 2;
-                padding-left: 2rem;
+                padding-left: 1rem;
                 ul {
+                    flex-direction: row;
+                    height: auto;
                     li {
-                        width: 50%;
+                        min-width: 100px;
                         justify-content: flex-end;
                         padding-right: 1rem;
+                        flex: 1;
                     }
                 }
             }
@@ -645,6 +664,18 @@ $stdWidth: 800px;
         margin: 0;
         height: auto;
         min-height: 650px;
+        .dashboard-container {
+            min-width: auto;
+            .feed-container {
+                .card-body {
+                    .dual-api-container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
         .mobile-nav {
             display: block;
             height: 3rem;
@@ -829,6 +860,9 @@ $stdWidth: 800px;
                 }
             }
             .nav-link {
+                &.display-none {
+                    display: block;
+                }
                 a {
                     color: $myOrange;
                     &:hover {

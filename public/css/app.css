@@ -10589,6 +10589,10 @@ ul {
   font-style: italic;
 }
 
+.display-none {
+  display: none;
+}
+
 .btn-back {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11093,14 +11097,32 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather {
+  margin-right: 1rem;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather #weather-details.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather {
-  margin-right: 1rem;
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather #weather-details.card-body .weather-left {
+  text-align: right;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather #weather-details.card-body .weather-right {
+  text-align: left;
+}
+
+.dashboard-page .dashboard-container .feed-container .dual-api-container .api-weather #weather-details.card-body .weather-right p {
+  margin-left: 1rem;
 }
 
 .dashboard-page .dashboard-container .feed-container .dual-api-container .api-map .card-header {
@@ -11205,15 +11227,26 @@ ul {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  padding-left: 2rem;
+  padding-left: 1rem;
+}
+
+.dashboard-page .dashboard-container .tags-container .tags ul {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: auto;
 }
 
 .dashboard-page .dashboard-container .tags-container .tags ul li {
-  width: 50%;
+  min-width: 100px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding-right: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .posts-index-page .post-container .post .post-title a {
@@ -11361,6 +11394,20 @@ ul {
     margin: 0;
     height: auto;
     min-height: 650px;
+  }
+
+  .meta-container .dashboard-container {
+    min-width: auto;
+  }
+
+  .meta-container .dashboard-container .feed-container .card-body .dual-api-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .meta-container .mobile-nav {
@@ -11654,6 +11701,10 @@ ul {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
     text-decoration: none;
+  }
+
+  .my-navbar .nav-links .nav-link.display-none {
+    display: block;
   }
 
   .my-navbar .nav-links .nav-link a {

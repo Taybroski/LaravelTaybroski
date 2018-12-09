@@ -12,6 +12,7 @@
             <div class="ml-4 date-time text-muted"><img id="loader" src="{{ asset('/images/ajax-loader-lightgrey.gif') }}"></div>
         </div>
 
+        {{-- Main card body --}}
         <div class="card-body">
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
@@ -25,7 +26,7 @@
                     Feeds
                 </div>
 
-                {{-- Main card body --}}
+                {{-- Feed container card body --}}
                 <div class="card-body">
 
                     <div class="dual-api-container">
@@ -33,11 +34,24 @@
                         <div class="card api-weather">
                             <div class="card-header">
                                 Weather
+                                {{-- loading icon from http://www.ajaxload.info/ --}}
+                                <div class="weather-loader">
+                                    <img id="loader" src="{{ asset('/images/ajax-loader-lightgrey.gif') }}">
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <p>Location:</p>
-                                <p>Temp:</p>
-                                <p>Wind:</p>
+                            <div id="weather-details" class="card-body">
+                                <div class="weather-left">
+                                    <p>Location:</p>
+                                    <p>Description:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Pressure:</p>
+                                    <p>Humidity:</p>
+                                    <p>Sunrise:</p>
+                                    <p>Sunset:</p>
+                                </div>
+                                <div class="weather-right">
+                                </div>
                             </div> {{-- End Weather API body --}}
                         </div> {{-- End Weather API card --}}
 
@@ -51,8 +65,16 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="map-container">
+                                <div class="map-container mb-2">
                                     <div id="map"></div>
+                                </div>
+                                <div class="map-lat-lng">
+                                    <div class="my-text-muted">
+                                        Lat: <span class="map-lat"></span>
+                                    </div>
+                                    <div class="my-text-muted">
+                                        Lng: <span class="map-lng"></span>
+                                    </div>
                                 </div>
                             </div> {{-- End Google Map body --}}
                         </div> {{-- End Google Map main Card --}}
@@ -83,6 +105,8 @@
                                         </ul>
                                     </div>                            
                                 </div>
+                                <br>
+                                <figure><embed src="https://wakatime.com/share/@tazje/fa837a01-c138-4527-91ed-468509e75a57.svg"></embed></figure>
                             </div>
                         </div>
                     </div> {{-- End Wakatime stats --}}
@@ -164,6 +188,7 @@
                             @if (count($posts) == 0)
                                 <h1 class="text-center mb-3">No Posts Found</h1>
                             @endif
+                            <hr class="mb-4">
                             {{-- Tags --}}
                             <div class="card">
                                 <div class="card-body tags-container">

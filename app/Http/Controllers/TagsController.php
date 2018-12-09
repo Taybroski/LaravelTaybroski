@@ -45,9 +45,12 @@ class TagsController extends Controller
             'name' => 'required'
         ]);
 
-        $tag = new Tag;
-        $tag->name = $request->input('name');
-        $tag->save();
+        // $tag = new Tag;
+        // $tag->name = $request->input('name');
+        // $tag->save();
+        $tag = Tag::firstOrCreate([
+            'name' => $request->name,            
+            ]);
 
         return redirect('/admin/dashboard')->with('success', 'Tag Created');
     }
