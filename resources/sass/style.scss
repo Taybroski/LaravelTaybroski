@@ -353,7 +353,7 @@ $stdWidth: 800px;
             justify-content: center;
             align-items: center;
             font-size: 2rem;
-            flex: 1;
+            flex: 2;
             h2 {
                 color: $darkGrey;
                 font-weight: bold;
@@ -367,6 +367,8 @@ $stdWidth: 800px;
             align-items: flex-end;
             text-align: left;
             text-transform: lowercase;
+            padding-left: 1rem;
+            flex: 1;
             font-size: 1.2rem;
             .post-tags,
             .post-categories {
