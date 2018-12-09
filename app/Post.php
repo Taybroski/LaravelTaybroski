@@ -2,10 +2,15 @@
 
 namespace App;
 
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+    use HasSlug;
+
     // Table name
     protected $table = 'posts';
     // Date Format
@@ -16,16 +21,23 @@ class Post extends Model
     public $timestamps = true; 
     // Protected attributes
     protected $fillable = ['title', 'body'];
-    // // Protected dates, carbon mutator
-    // protected $dates = [
-    //     'created_at',
-    //     'updated_at',
-    // ];
 
-    // public function getDateFormat()
-    // {
-    //     return 'Y-m-d H:i:s.u';
-    // }
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug')
+            ->slugsShouldBeNoLongerThan(30)
+            ->doNotGenerateSlugsOnUpdate();
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function user()
     {
@@ -44,5 +56,10 @@ class Post extends Model
             'author'  => $author,
             'post_id' => $this->id
         ]);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

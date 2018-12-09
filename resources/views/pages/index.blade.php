@@ -5,7 +5,7 @@
 
     <div class="my-container">
         <div class="big-card">
-            {{-- @include('partials.navbar') --}}
+            @include('partials.navbar')
             
             <div class="index-header">
                 <div class="header-container">

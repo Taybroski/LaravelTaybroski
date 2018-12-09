@@ -13705,6 +13705,9 @@ $(document).ready(function () {
     // CK Editor - WYSIWYG
     var editor = $("#editor");
     if (editor.length) {
+        CKEDITOR.editorConfig = function (config) {
+            config.htmlEncodeOutput = true;
+        };
         CKEDITOR.replace("editor");
     }
 
@@ -13722,27 +13725,177 @@ $(document).ready(function () {
         navbar.animate({
             top: "-100%"
         }, 250, "swing").css("box-shadow", "none");
-    });
+    }); // End Mobile nav dropdown
 
-    var slogan = $(".slogan").slideDown();
-    var clicks = 0;
-    var clickLog = 0;
+    // Confirm delete alert
+    var deleteButton = $(".deleteConfirm");
+    if (deleteButton.length) {
+        deleteButton.click(function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure?")) {
+                // Post the form
+                $(e.target).closest("form").submit(); // Post the surrounding form
+            } else {
+                return alert("Aborted!");
+            }
+        });
+    } // end Confirm delete
 
-    slogan.click(function () {
-        clicks++;
-        clickLog++;
-        console.log(clicks + ", " + clickLog);
-        slogan.text("Zombie Killer Robots Inc.").css("right", "38px");
-        if (clicks == 2) {
-            slogan.text("Buy, Sell, Strum, Code.").css("right", "32px");
-            clicks = 0;
-        }
-        // Easter egg: 1
-        if (clickLog == 69) {
-            alert("You just clicked this 69 times! You Win! .... Nothing.");
-        }
-    });
-});
+    // Key logger
+    var keys = {};
+    onkeydown = onkeyup = function onkeyup(e) {
+        e = e || event; // to deal with IE
+        keys[e.keyCode] = e.type == "keydown";
+        /* insert conditional here */
+        // Submit on enter
+        $("#submitEnter").keypress(function (e) {
+            if (keys[16] && keys[13]) {
+                return true;
+            } else if (keys[13]) {
+                e.preventDefault();
+                $(e.target).closest("form").submit();
+                return false;
+            }
+        }); // End submit on enter
+    }; // Ent Keylogger
+
+    // Wakatime API
+    var wakatime = $("#wakatime");
+    var wakaStats = $("#waka-stats");
+    if (wakatime) {
+        // end Coding Activity
+
+        // Returns the time data with html
+        var timeTemplate = function timeTemplate(hours, mins) {
+            return "<i class=\"far fa-clock mr-2\"></i><p>" + hours + " Hours, " + mins + " Minutes";
+        };
+
+        // Languages
+
+
+        // End Lnaguage
+
+        // Returns an li for the wakatime language API
+        var languageTemplate = function languageTemplate(name, percent) {
+            return "<li><i class=\"fas fa-caret-right mr-2\"></i>" + name + " - " + percent + "%</div>";
+        };
+
+        var act = "https://wakatime.com/share/@tazje/42dff32c-f465-44e2-a359-e7b2a936b3d7.json";
+        var langs = "https://wakatime.com/share/@tazje/5cd342d9-9794-4d73-939b-c212d4d43c42.json";
+
+        // Coding Activity
+        var wakaTime = $("#waka-time");
+        var week = [];
+        var day = [];
+        var timeStr = "";
+        $.ajax({
+            type: "GET",
+            url: act,
+            dataType: "jsonp",
+            success: function success(response) {
+                // Map Wakatime response and push to week object.
+                $.map(response, function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        week.push(data[i]);
+                    }
+                });
+                // Map each day and push to day object, return the total_seconds property value.
+                var sec = $.map(week, function (day) {
+                    for (var i = 0; i < day.length; i++) {
+                        day.push(day[i]);
+                    }
+                    return day.grand_total.total_seconds;
+                });
+                // calculate the sum of seconds for each day
+                // Using the custom add() function
+                var sum = sec.reduce(add, 0);
+                var days = sum / 86400; // Convert seconds to days
+                var hrs = sum / 3600; // Convert seconds to hours
+                var mns = sum / 600; // Convert seconds to miniutes
+                var rmns = mns % 60; // Get remaning minutes
+                var hours = Math.floor(hrs); // Format hours
+                var mins = Math.floor(rmns); // Format remaining minutes
+
+                // Inject into Dashboard HTML
+                timeStr += timeTemplate(hours, mins);
+                wakaTime.html(timeStr).css("margin-left", "1rem");
+            }
+        });var wakaList = $("#waka-list");
+        var langStr = "";
+        var languages = [];
+        var lang = [];
+        $.ajax({
+            type: "GET",
+            url: langs,
+            dataType: "jsonp",
+            success: function success(response) {
+                $.map(response, function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        languages.push(data[i]);
+                    }
+                });
+                for (var i = 0; i < languages.length; i++) {
+                    langStr += languageTemplate(languages[i].name, languages[i].percent);
+                }
+                wakaList.html(langStr);
+            }
+        });
+    } // end Wakatime API
+
+    // Add function, used with the .reduce() function
+    function add(a, b) {
+        return a + b;
+    }
+
+    // OpenWeatherMapAPI
+    var weatherContainer = $(".api-weather");
+    if (weatherContainer.length && navigator.geolocation) {
+        var weatherDetails = $("#weather-details");
+        var loader = $(".weather-loader");
+        var weatherStr = "";
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            var lat = pos.lat;
+            var lon = pos.lng;
+            var owmApiKey = "29ea1d615b68f7299dd1826274565af4";
+            var owmQuery = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + owmApiKey;
+            console.log("Weather here!");
+            $.ajax({
+                type: "GET",
+                url: owmQuery,
+                dataType: "json",
+                success: function success(data) {
+                    var main = data.main;
+                    var sys = data.sys;
+                    var weath = data.weather[0];
+                    var wind = data.wind;
+                    var sunrise = new moment.unix(sys.sunrise).format("H:mm:ss a");
+
+                    var sunset = new moment.unix(sys.sunset).format("H:mm:ss a");
+                    console.log(data);
+
+                    loader.css("display", "none");
+                    weatherDetails.html("\n                            <div class=\"weather-left\">\n                                    <p>Location:</p>\n                                    <p>Description:</p>\n                                    <p>Temp:</p>\n                                    <p>Wind:</p>\n                                    <p>Pressure:</p>\n                                    <p>Humidity:</p>\n                                    <p>Sunrise:</p>\n                                    <p>Sunset:</p>\n                                </div>\n                                <div class=\"weather-right\">\n                                    <p>" + data.name + ", " + sys.country + "</p>\n                                    <p>" + weath.main + ", " + weath.description + "</p>\n                                    <p>" + main.temp + "&deg;</p>\n                                    <p>" + wind.speed + "mph</p>\n                                    <p>" + main.pressure + "mb</p>\n                                    <p>" + main.humidity + "%</p>\n                                    <p>" + sunrise + "</p>\n                                    <p>" + sunset + "</p>\n                                </div>\n                            ");
+                }
+            });
+        }, function () {
+            handleLocationError(true);
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, alert("Browser doesn't support Geolocation"));
+    }
+
+    // Dashboard date and time
+    function updateTime() {
+        $(".date-time").html(moment().format("h:mm:ssa - dddd, Do MMMM "));
+    }
+    setInterval(updateTime, 1000);
+}); // End ready function
 
 /***/ }),
 /* 12 */

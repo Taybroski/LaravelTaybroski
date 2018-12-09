@@ -13,7 +13,9 @@
   
       <label for="body"></label>
       <textarea id="editor" name="body" cols="30" rows="10"></textarea>
-  
+
+      <label for="tags">Add Tags</label>
+      <input type="text" name="tags" placeholder="Seperate with a comma ,">    
       <button type="submit">Submit Post</button>
     </form>
   </div>

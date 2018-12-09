@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+use App\Tag;
+
 class PagesController extends Controller
 {
     public function index()
@@ -11,9 +14,9 @@ class PagesController extends Controller
         return view('pages.index');
     }
 
-    public function contact()
+    public function about()
     {
-        return view('pages.contact');
+        return view('pages.about');
     }
 
     public function portfolio()
@@ -23,6 +26,9 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-        return view('pages.dashboard');
+        $posts = Post::all();
+        $tags = Tag::all();
+
+        return view('pages.dashboard', compact(['posts', 'tags']));
     }
 }

@@ -90,23 +90,18 @@ a:hover {
     text-decoration: none;
     color: #000;
 }
+ul {
+    list-style: none;
+}
 
 // Variables and simple styles.
 $lightGrey: #e4e4e4;
 $darkGrey: #d8d8d8;
 $myOrange: #ff9b0f;
-$stdMinWidth: 800px;
+$stdWidth: 800px;
 .my-form {
     display: flex;
     flex-direction: column;
-}
-.post {
-    width: 50%;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-.comment {
-    border: 1px solid #000;
 }
 .mobile-nav,
 .mobile-nav-clear {
@@ -115,14 +110,68 @@ $stdMinWidth: 800px;
 .hide {
     display: hidden;
 }
+.my-text-muted {
+    color: #6c757d;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+.display-none {
+    display: none;
+}
+.btn-back {
+    display: flex;
+    font-weight: bold;
+    margin-top: 1rem;
+    i {
+        color: $myOrange;
+        font-size: 1.45rem;
+        margin-right: 5px;
+    }
+}
+%gradient-orange {
+    background: linear-gradient($myOrange 70%, #ff5b7e);
+}
+%my-maxw {
+    max-width: 900px;
+    margin: 0 auto;
+}
+%my-minw {
+    min-width: 800px;
+}
+
+.delete-icon {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+#loader {
+    font-weight: bold;
+    margin-left: 1rem;
+    width: 22px;
+    height: 22px;
+}
 
 // Main Application container
 .meta-container {
-    width: 100%;
-    // height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    .page-title {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        h1 {
+            font-size: 6rem;
+            text-transform: lowercase;
+            text-decoration: underline $darkGrey wavy;
+            color: $myOrange;
+            line-height: 8rem;
+            font-weight: 200;
+        }
+    }
 }
 
 .my-navbar {
@@ -131,6 +180,7 @@ $stdMinWidth: 800px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    // min-height: 60px;
     .nav-links {
         display: flex;
         flex-direction: row;
@@ -163,7 +213,7 @@ $stdMinWidth: 800px;
     .my-container {
         display: flex;
         width: 100%;
-        min-width: $stdMinWidth;
+        min-width: $stdWidth;
         height: 100vh;
         min-height: 650px;
         padding: 0 4rem 3rem;
@@ -278,25 +328,470 @@ $stdMinWidth: 800px;
     }
 }
 
+// Posts main styling
+.post-container {
+    @extend %my-maxw;
+    width: 750px;
+    height: 100%;
+    flex-direction: column;
+    .post {
+        display: inherit;
+        flex-direction: inherit;
+        box-shadow: 0px 14px 15px rgba(0, 0, 0, 0.07);
+        text-align: center;
+        padding: 0 4rem 2rem;
+        margin-bottom: 4rem;
+        border-radius: 0.3125rem;
+        .post-title-tag-cat {
+            display: flex;
+            margin: 2rem 1rem 1.5rem;
+            min-height: 60px;
+            align-items: center;
+        }
+        .post-title {
+            display: inherit;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            flex: 1;
+            h2 {
+                color: $darkGrey;
+                font-weight: bold;
+                font-size: 3rem;
+                text-decoration: underline $myOrange dashed;
+            }
+        }
+        .post-labels {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: left;
+            text-transform: lowercase;
+            font-size: 1.2rem;
+            .post-tags,
+            .post-categories {
+                display: flex;
+                flex-wrap: wrap;
+                div {
+                    width: fit-content;
+                    padding: 1px 4px;
+                    border-radius: 4px;
+                    margin: 0 5px 5px 0;
+                }
+                .tag {
+                    background-color: $myOrange;
+                    font-style: italic;
+                    padding-right: 6px;
+                    font-size: 1rem;
+                }
+                .cat {
+                    background-color: $lightGrey;
+                }
+            }
+        }
+
+        .post-social-stats {
+            display: flex;
+            margin-bottom: 0.5rem;
+            i {
+                margin-right: 1rem;
+            }
+
+            .post-created-at {
+                flex: 1;
+                text-align: right;
+                padding-right: 6px;
+            }
+        }
+        .post-body {
+            text-align: left;
+            padding-top: 1rem;
+            margin-bottom: 4rem;
+            text-align: justify;
+            border-top: 2px dashed $myOrange;
+        }
+        .post-sentence {
+            text-align: left;
+        }
+        .post-social-links {
+            display: flex;
+            flex-direction: row;
+            font-size: 3rem;
+            line-height: 1rem;
+            > div {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+    .form-comment {
+        textarea,
+        input,
+        button {
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 10px 50px 15px rgba(0, 0, 0, 0.08);
+        }
+        textarea {
+            height: 100px;
+            padding: 5px 0 0 10px;
+        }
+        input {
+            padding: 5px 0 5px 10px;
+            margin: 1rem 0;
+        }
+    }
+}
+
+.dashboard-page {
+    .my-card-list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100px;
+        li {
+            display: flex;
+        }
+    }
+    .dashboard-container {
+        width: 55rem;
+        .card {
+            margin-bottom: 1rem;
+            .card-header {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        .feed-container {
+            .dual-api-container {
+                display: flex;
+                // flex-direction: row;
+                .api-weather {
+                    margin-right: 1rem;
+                    #weather-details.card-body {
+                        display: flex;
+                        flex-direction: row;
+                        .weather-left {
+                            text-align: right;
+                        }
+                        .weather-right {
+                            text-align: left;
+                            p {
+                                margin-left: 1rem;
+                            }
+                        }
+                    }
+                }
+                .api-map {
+                    .card-header {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                    .map-container {
+                        width: 300px;
+                        height: 300px;
+                        margin: 0 auto;
+                        #map {
+                            width: 100%;
+                            height: 100%;
+                            border: 1px solid #000;
+                        }
+                    }
+                }
+            }
+            .waka-stats {
+                p {
+                    text-align: right;
+                    width: 100px;
+                }
+                .waka-time-wrapper {
+                    display: flex;
+                    margin-bottom: 1rem;
+                    #waka-time {
+                        display: flex;
+                        flex: 1;
+                        align-items: center;
+                        #loader {
+                            margin-right: 100%;
+                        }
+                        p {
+                            flex: 1;
+                            text-align: left;
+                        }
+                    }
+                }
+                .waka-lang-wrapper {
+                    display: flex;
+                    // flex-direction: row;
+                    .waka-lang-list {
+                        display: flex;
+                        // flex: 1;
+                        #waka-list {
+                            flex: 1;
+                            li {
+                                margin-left: 1rem;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .tags-container {
+            display: flex;
+            flex-direction: row;
+            .add-tag {
+                flex: 1;
+            }
+            .tags {
+                flex: 2;
+                padding-left: 1rem;
+                ul {
+                    flex-direction: row;
+                    height: auto;
+                    li {
+                        min-width: 100px;
+                        justify-content: flex-end;
+                        padding-right: 1rem;
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.posts-index-page {
+    @extend %my-maxw;
+    .post-container {
+        .post {
+            .post-title {
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        text-align: left;
+                    }
+                    .post-carets {
+                        // flex: 1;
+                        color: $myOrange;
+                        text-align: right;
+                        :first-of-type {
+                            margin-left: 1rem;
+                        }
+                        :last-of-type {
+                            margin-left: -0.5rem;
+                        }
+                    }
+                }
+            }
+            .post-body {
+                margin-bottom: 1rem;
+            }
+            .post-labels {
+                flex-direction: row;
+                .post-created-at {
+                    flex: 1;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.posts-show-page {
+    .post-container {
+        .post {
+            margin-bottom: 2rem;
+            .post-comment-section {
+                display: flex;
+                flex-direction: row;
+                margin-top: 1rem;
+                .form-comment {
+                    flex: 1;
+                    margin-right: 2rem;
+                    .btn-comment-submit {
+                        @extend %gradient-orange;
+                    }
+                }
+                .comment-container {
+                    flex: 1;
+                    h2 {
+                        border-bottom: 2px $myOrange dashed;
+                        margin-bottom: 1rem;
+                        font-weight: bold;
+                        text-align: left;
+                    }
+                    .comment {
+                        display: flex;
+                        flex-direction: row;
+                        border-radius: 5px;
+                        min-height: 50px;
+                        box-shadow: 0px 0px 30px 15px rgba(0, 0, 0, 0.08);
+                        margin-bottom: 2rem;
+                        background: linear-gradient(#f8fafc, #fff);
+                        .comment-content {
+                            display: inherit;
+                            flex-direction: column;
+                            flex: 1;
+                            text-align: left;
+                            padding: 5px 15px;
+                        }
+                        form {
+                            align-self: center;
+                            padding-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dashboard-page {
+    @extend %my-maxw;
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        .card {
+            flex: 1;
+        }
+    }
+}
+
 // Main Mobile View
 @media (max-width: 767px) {
+    * {
+        min-width: 0;
+    }
     .meta-container {
         position: relative;
         margin: 0;
         height: auto;
-        min-height: 650px;
+        // min-height: 650px;
+
+        .dashboard-container {
+            width: fill-available;
+            .card-header {
+                flex-wrap: wrap;
+            }
+            .feed-container {
+                .card-body {
+                    .dual-api-container {
+                        display: flex;
+                        flex-direction: column;
+                        .api-weather {
+                            margin-right: 0;
+                            .card-body {
+                                padding: 0.8rem;
+                            }
+                        }
+                        .api-map {
+                            .map-container {
+                                height: 250px;
+                                max-height: 300px;
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+                .waka-lang-wrapper,
+                .waka-time-wrapper {
+                    flex-direction: column;
+                    .waka-lang-list {
+                        ul {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            .tags-container {
+                flex-direction: column-reverse;
+                .tags {
+                    margin-bottom: 1rem;
+                    .my-card-list {
+                        li {
+                            padding-right: 3rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+                form {
+                    input[type="text"] {
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding-left: 0.5rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+        @media (max-width: 400px) {
+            .posts-table-container {
+                table {
+                    thead {
+                        th:nth-child(3),
+                        th:nth-child(4),
+                        th:nth-child(5),
+                        th:nth-child(7) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
 
         .mobile-nav {
+            background: linear-gradient(#ff9b0f 50%, #ff5b43);
             display: block;
             height: 3rem;
             width: 100%;
-            position: fixed;
-            background-color: #000;
+            // position: fixed;
         }
         .mobile-nav-clear {
             display: block;
             width: 100%;
             height: 3rem;
+        }
+        .posts-index {
+            width: 100%;
+        }
+        .post-container {
+            padding: 0 1rem;
+            width: auto;
+            .post {
+                padding: 0 1rem 1rem;
+                .post-title-tag-cat {
+                    flex-direction: column;
+                    margin-top: 1rem;
+                }
+                .post-title {
+                    margin-bottom: 1rem;
+                }
+                .post-body {
+                    margin-bottom: 2rem;
+                }
+                .post-labels {
+                    flex-wrap: wrap;
+                    .post-created-at {
+                        text-align: left;
+                    }
+                }
+                .post-comment-section {
+                    display: flex;
+                    flex-direction: column;
+                    form {
+                        margin-right: 0 !important;
+                    }
+                    .comment-container {
+                        margin-top: 1rem;
+                        .comment {
+                            margin-bottom: 1.5rem;
+                        }
+                    }
+                }
+            }
         }
 
         // Index page
@@ -408,39 +903,57 @@ $stdMinWidth: 800px;
 
     .my-navbar {
         height: 0;
-        z-index: 99;
+        z-index: 2;
         .nav-links {
             width: 90%;
             flex-wrap: wrap;
             flex-direction: column;
             text-align: center;
-            font-size: 1rem;
+            font-size: 2rem;
             position: absolute;
             position: fixed;
             top: -100%;
             border-radius: 0 0 10px 10px;
             background-color: rgba(255, 255, 255, 0.9);
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-            // filter: blur(5px); Use this style for js onclick.
             transition: all 0.5s ease;
+            z-index: 3;
             :hover {
                 text-decoration: none;
             }
+            .dropdown-menu {
+                font-size: 1.2rem;
+            }
             #fa-close {
                 display: block;
-                margin-bottom: 1rem;
+                margin: 0.5rem 0 2rem 0;
                 transition: all 0.5s ease;
-                font-size: 2rem;
+                font-size: 4rem;
                 &:hover {
                     transform: rotate(180deg);
                     text-decoration: none;
                 }
             }
             .nav-link {
+                &.display-none {
+                    display: block;
+                }
                 a {
                     color: $myOrange;
                     &:hover {
                         text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .posts-show-page {
+        .post-container {
+            .post {
+                .post-title-tag-cat {
+                    margin: 1rem 0 1rem;
+                    .post-labels {
+                        align-self: flex-end;
                     }
                 }
             }

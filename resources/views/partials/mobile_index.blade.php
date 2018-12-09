@@ -1,10 +1,10 @@
 <div class="mobile-index">
     <div class="mobile-index-buttons">
         <div class="btn-portfolio-wrapper">
-            <li class="btn-portfolio"><a href="#">Portfolio</a></li>
+            <li class="btn-portfolio"><a href="{{ route('about') }}">About</a></li>
         </div>
         <div class="btn-blog-wrapper">
-            <li class="btn-blog"><a href="#">Blog</a></li>
+            <li class="btn-blog"><a href="/posts">Blog</a></li>
         </div>
     </div>
     <div class="mobile-index-footer">

@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Pages Controller routes
 Route::get('/', 'PagesController@index');
-Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio');
 Route::get('/admin/dashboard', 'PagesController@dashboard')->middleware('auth')->name('dashboard');
 
@@ -27,3 +27,6 @@ Route::resource('posts', 'PostsController');
 
 // Comments Controller routes
 Route::resource('comments', 'CommentsController');
+
+// Tags Controller routes
+Route::resource('tags', 'TagsController');

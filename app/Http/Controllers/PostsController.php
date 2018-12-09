@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Auth;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -14,25 +15,16 @@ class PostsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return view('posts.index', compact('posts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('posts.create');
+        $tags = Tag::all();
+        return view('posts.create', compact('tags'));
     }
 
     /**
@@ -51,42 +43,37 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body  = $request->input('body');
-        $post->user_id = auth()->user()->id;
-        $post->save();
+        $post->user_id = auth()->user()->id;  
+        
+        if ($post && $request->tags) 
+        {
+            $tags = explode(',', $request->get('tags'));
+            $tag_ids = [];
+            foreach ($tags as $tagName) 
+            {
+                $tag = Tag::firstOrCreate(['name' => $tagName]);
+                if($tag)
+                {
+                    $tag_ids[] = $tag->id;
+                }
+            }
+        }
+        $post->save();        
+        $post->tags()->sync($tag_ids);
 
         return redirect('/posts')->with('success', 'Post created successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $post = Post::find($id);
+    public function show(Post $post)
+    {        
         return view('posts.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function edit(Post $post)
+    {        
+        return view('posts.edit', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $post = Post::find($id);
@@ -94,14 +81,9 @@ class PostsController extends Controller
         $post->fill(request(['title', 'body']));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect('/admin/dashboard')->with('success', 'Post Removed');
     }
 }

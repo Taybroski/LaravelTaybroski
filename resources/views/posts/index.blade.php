@@ -1,31 +1,53 @@
 @extends('layouts.app')
-@section('body_class', 'posts-all-page')
+@section('body_class', 'posts-index-page')
 
 @section('content')
-    
-  <br>
-  <h1>Posts Index Page</h1>
-  <br>
 
-  @foreach ($posts as $p)
+<div class="posts-index">
 
-    <div class="post">
-      <br>
-      <h2><a href="/posts/{{ $p->id }}">{{ $p->title }}</a></h2>    
-      <p>{!! $p->body !!}</p>
-      <p class="text-muted">Author: {{ $p->user->name }}</p>
-      <p class="text-muted">Posted: {{ \Carbon\Carbon::parse($p->created_at)->format('dS F Y h:ia') }}</p>
-      {{-- <p class="text-muted">Posted: {{ \FormatHelper::formatPostDate($p->created_at) }}</p> --}}
-      <hr>    
+  <div class="page-title">
+    <h1>Blog</h1>
+  </div>
+  
+  <div class="post-container">
 
-    @foreach ($p->comments as $c)
-      <div class="comment">
-        <p>{{ $c->body }}</p>
-        <p class="text-muted">Author: {{ $c->author }}</p>        
+    @if (count($posts) == 0)
+        <h1>No Posts... Yet</h1>
+    @endif
+    @foreach ($posts as $p)
+      <div class="post">
+        <div class="post-title">
+          <a href="/posts/{{ $p->slug }}">
+            <h1>{{ $p->title }}</h1>
+            <div class="post-carets">
+              <i class="fas fa-caret-right"></i>
+              <i class="fas fa-caret-right"></i>
+            </div>
+          </a>
+        </div>                
+        
+        <div class="post-body">
+          <p>{!! str_limit($p->body, 200) !!}<a class="my-text-muted" href="/posts/{{ $p->slug }}">Read On...</a></p>
+        </div>    
+        
+        <div class="post-labels">
+          {{-- <div class="post-categories">
+            <div class="cat">Category</div>
+            <div class="cat">Category</div>
+          </div> --}}
+          <div class="post-tags">
+            @foreach ($p->tags as $tag)
+                <div class="tag">{{ $tag->name }}</div>
+            @endforeach
+          </div>
+          <div class="post-created-at">
+            <p class="my-text-muted">{{ \Carbon\Carbon::parse($p->created_at)->format('LS F Y') }}</p>
+          </div>
+        </div>
       </div>      
-    @endforeach    
-    <br><br>
-    </div>
-  @endforeach
+    @endforeach
+    <a class="btn-back" href="{{ url('/') }}"><i class="fas fa-caret-left"></i> Back</a>
+  </div>
+</div>
 
 @endsection
