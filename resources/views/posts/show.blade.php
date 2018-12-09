@@ -82,7 +82,7 @@
                 <p>{!! $c->body !!}</p>
                 <p class="my-text-muted">
                   {{ $c->author }} - 
-                  {{ \Carbon\Carbon::parse($c->created_at)->format('L/n/y') }}
+                  {{ \Carbon\Carbon::parse($c->created_at)->format('d/n/y') }}
                 </p>
               </div>
               <form action="/comments/{{ $c->id }}" method="POST">
