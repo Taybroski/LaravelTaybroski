@@ -11400,9 +11400,7 @@ ul {
   }
 
   .meta-container .dashboard-container {
-    width: -webkit-fill-available;
-    width: -moz-available;
-    width: fill-available;
+    width: 100%;
   }
 
   .meta-container .dashboard-container .card-header {
