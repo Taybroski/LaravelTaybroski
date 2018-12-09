@@ -29,6 +29,12 @@
         <div class="post-body">
           <p>{!! str_limit($p->body, 200) !!}<a class="my-text-muted" href="/posts/{{ $p->slug }}">Read On...</a></p>
         </div>    
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+        <div class="my-addthis addthis_toolbox addthis_inline_share_toolbox" 
+             addthis:url="{{ URL::current() }}" 
+             addthis:title="{!! $p->title !!}" 
+             addthis:description="{!! $p->body !!}"></div>
         
         <div class="post-labels">
           {{-- <div class="post-categories">
