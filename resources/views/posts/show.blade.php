@@ -46,11 +46,11 @@
         <p class="my-text-muted">Liked this? Leave a comment or share the post!</p>
       </div>
       <div class="post-social-links">
-        <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-        <div class="addthis_toolbox addthis_inline_share_toolbox" 
-             addthis:url="{{ URL::current() }}" 
-             addthis:title="{!! $post->title !!}" 
-             addthis:description="{!! $post->body !!}"></div>
+      <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+      <div class="addthis_toolbox addthis_inline_share_toolbox" 
+            addthis:url="{{ URL::current() }}" 
+            addthis:title="{!! $post->title !!}" 
+            addthis:description="{!! $post->body !!}"></div>
 
           {{-- <div class="post-facebook">
             <a href="#">

@@ -591,8 +591,13 @@ $stdWidth: 800px;
             .post-body {
                 margin-bottom: 1rem;
             }
+
+            .my-addthis {
+                display: flex;
+            }
             .post-labels {
                 flex-direction: row;
+                padding-left: 0;
                 .post-created-at {
                     flex: 1;
                     text-align: right;
