@@ -740,6 +740,14 @@ $stdWidth: 800px;
                             display: none;
                         }
                     }
+                    tbody {
+                        td:nth-child(3),
+                        td:nth-child(4),
+                        td:nth-child(5),
+                        td:nth-child(7) {
+                            display: none;
+                        }
+                    }
                 }
             }
         }

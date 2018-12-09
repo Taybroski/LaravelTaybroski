@@ -11480,6 +11480,13 @@ ul {
   .meta-container .posts-table-container table thead th:nth-child(7) {
     display: none;
   }
+
+  .meta-container .posts-table-container table tbody td:nth-child(3),
+  .meta-container .posts-table-container table tbody td:nth-child(4),
+  .meta-container .posts-table-container table tbody td:nth-child(5),
+  .meta-container .posts-table-container table tbody td:nth-child(7) {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
