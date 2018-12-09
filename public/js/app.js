@@ -13698,23 +13698,10 @@ module.exports = __webpack_require__(36);
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-=======
->>>>>>> 42de569d6b6de5595ace95fc677a2eec770dae06
 __webpack_require__(12);
 
 $(document).ready(function () {
     console.log("ready");
-<<<<<<< HEAD
-    var slogan = $(".slogan");
-=======
-
     // CK Editor - WYSIWYG
     var editor = $("#editor");
     if (editor.length) {
@@ -13738,7 +13725,6 @@ $(document).ready(function () {
     });
 
     var slogan = $(".slogan").slideDown();
->>>>>>> 42de569d6b6de5595ace95fc677a2eec770dae06
     var clicks = 0;
     var clickLog = 0;
 
