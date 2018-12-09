@@ -23,7 +23,7 @@
         </div>
       </div>
         <div class="post-social-stats">
-          <div class="post-views">
+          {{-- <div class="post-views">
             24
             <i class="fas fa-eye"></i>
           </div>
@@ -34,9 +34,9 @@
           <div class="post-shares">
             0
             <i class="fas fa-share-alt-square"></i>
-          </div>
+          </div> --}}
         <div class="post-created-at">
-          <p class="my-text-muted">{{ \Carbon\Carbon::parse($post->created_at)->format('LS F Y') }}</p>
+          <p class="my-text-muted">{{ \Carbon\Carbon::parse($post->created_at)->format('dS F Y') }}</p>
         </div>
       </div>
       <div class="post-body">
