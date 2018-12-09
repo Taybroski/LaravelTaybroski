@@ -13862,7 +13862,7 @@ $(document).ready(function () {
             var lat = pos.lat;
             var lon = pos.lng;
             var owmApiKey = "29ea1d615b68f7299dd1826274565af4";
-            var owmQuery = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + owmApiKey;
+            var owmQuery = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + owmApiKey;
             console.log("Weather here!");
             $.ajax({
                 type: "GET",
