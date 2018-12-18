@@ -10593,6 +10593,28 @@ ul {
   display: none;
 }
 
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
 .btn-back {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11823,5 +11845,208 @@ ul {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.new-index-page .new-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.new-index-page .new-container .zero {
+  width: 100%;
+  height: 125vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.new-index-page .new-container .zero .svg-circle-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.new-index-page .new-container .zero .svg-circle-container .svg-circle {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-size: cover;
+  border: 4px dashed #000;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.new-index-page .new-container .zero .svg-circle-container .svg-icon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 25%;
+  left: 25%;
+}
+
+.new-index-page .new-container .zero h1 {
+  font-size: 2rem;
+  color: #ff7700;
+  font-weight: bold;
+  text-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 0.8px #000;
+}
+
+.new-index-page .new-container .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ff9b0f;
+  background-image: url("/images/Flat-Mountains.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.new-index-page .new-container .first .title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto 10rem;
+}
+
+.new-index-page .new-container .first .title p,
+.new-index-page .new-container .first .title span {
+  position: absolute;
+}
+
+.new-index-page .new-container .first .title p {
+  top: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: #880088;
+}
+
+.new-index-page .new-container .first .title span {
+  bottom: 0;
+  right: -5px;
+  font-size: 8rem;
+  color: #aa0000;
+}
+
+.new-index-page .new-container .first .title h1 {
+  font-size: 12rem;
+  letter-spacing: -16px;
+}
+
+.new-index-page .new-container .second {
+  background-color: #ff9b0f;
+  background-image: url("/images/Rainbow-Vortex.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.new-index-page .new-container .second .svg-circle {
+  background-image: url("/images/Rainbow-Vortex.svg");
+}
+
+.new-index-page .new-container .second .svg-icon {
+  background-image: url("/images/Credit-Card.svg");
+}
+
+.new-index-page .new-container .third {
+  background-color: #330033;
+  background-image: url("/images/Endless-Constellation.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.new-index-page .new-container .third .svg-circle {
+  background-image: url("/images/Endless-Constellation.svg");
+}
+
+.new-index-page .new-container .third .svg-icon {
+  background-image: url("/images/Webpage.svg");
+}
+
+.new-index-page .new-container .fourth {
+  height: 200vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #fff), to(#330033));
+  background-image: linear-gradient(to top, #fff 10%, #330033);
+}
+
+.new-index-page .new-container .fith {
+  height: 70vh;
+  background-color: #fff;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.new-index-page .new-container .fith .email {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.new-index-page .new-container .fith .email .svg-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url("/images/Mail.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.new-index-page .new-container .fith .email a {
+  font-size: 4rem;
+  color: #880088;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.new-index-page .new-container .fith a {
+  margin-top: 10rem;
 }
 

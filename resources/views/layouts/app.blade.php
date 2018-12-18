@@ -17,7 +17,8 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script> 
+    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools --> 
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0d452425e4cf04"></script>
     <script src="{{ asset('js/app.js') }}"></script>
@@ -25,7 +26,7 @@
     <body class="@yield('body_class')">
         
     <div class="meta-container">
-        @if (Request::url() !== url('/'))
+        @if (Request::url() !== url('/') && Request::url() !== url('/new-index'))
             @include('partials.navbar')   
             <div class="mobile-nav"></div>     
             {{-- <div class="mobile-nav-clear"></div> --}}
@@ -36,16 +37,34 @@
 
 
 
-    {{-- Google Map API --}}
-    <script>
+    
+    <script>        
+        // Scroll Reveal
+        var circleOptions = {
+            delay: 50,
+            duration: 1000
+        }
+        var iconOptions = {
+            delay: 100,
+            duration: 1300
+        }
+        var textOptions = {
+            delay: 100,
+            duration: 1000
+        }
+        ScrollReveal().reveal(".svg-circle", circleOptions)
+        ScrollReveal().reveal(".svg-icon", iconOptions)
+        ScrollReveal().reveal(".svg-text", textOptions)
 
+
+
+        // Google Map API 
         var mapContainer = $(".map-container");
         var loader = $(".map-loader");  
         var mapLat = $(".map-lat");
         var mapLng = $(".map-lng");
         if (mapContainer.length) {
-            console.log("Map Here");
-         
+            console.log("Map Here");        
             var jersey = { lat: 49.214439, lng: -2.131250 };
             var lat, lng, map, marker, infoWindow;
             // Initialize the map
