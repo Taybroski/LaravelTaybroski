@@ -26,7 +26,7 @@
     <body class="@yield('body_class')">
         
     <div class="meta-container">
-        @if (Request::url() !== url('/') && Request::url() !== url('/new-index'))
+        @if (Request::url() !== url('/'))
             @include('partials.navbar')   
             <div class="mobile-nav"></div>     
             {{-- <div class="mobile-nav-clear"></div> --}}
@@ -49,7 +49,7 @@
             duration: 1300
         }
         var textOptions = {
-            delay: 100,
+            delay: 50,
             duration: 1000
         }
         ScrollReveal().reveal(".svg-circle", circleOptions)

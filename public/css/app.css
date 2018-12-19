@@ -10749,168 +10749,203 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  min-width: 800px;
-  height: 100vh;
-  min-height: 650px;
-  padding: 0 4rem 3rem;
-}
-
-.index-page .my-container .big-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 0 0 30px 30px;
-  -webkit-box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
-          box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
-  position: relative;
 }
 
-.index-page .my-container .big-card .index-header {
+.index-page .my-container .zero {
+  width: 100%;
+  height: 125vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.index-page .my-container .zero .svg-circle-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.index-page .my-container .zero .svg-circle-container .svg-circle {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-size: cover;
+  border: 4px dashed #000;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.index-page .my-container .zero .svg-circle-container .svg-icon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 25%;
+  left: 25%;
+}
+
+.index-page .my-container .zero h1 {
+  font-size: 2rem;
+  color: #ff7700;
+  font-weight: bold;
+  text-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 0.8px #000;
+}
+
+.index-page .my-container .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #ff9b0f;
+  background-image: url("/images/Flat-Mountains.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.index-page .my-container .first .title {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.index-page .my-container .big-card .index-header .header-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 600px;
-  margin: 0 auto;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.index-page .my-container .big-card .index-header h1 {
-  width: 100%;
-  height: 100%;
-  min-height: 250px;
-  text-align: center;
-  font-size: 8rem;
-  letter-spacing: -12px;
-  position: relative;
-}
-
-.index-page .my-container .big-card .index-header h1 span:first-child {
-  color: #ff9b0f;
-}
-
-.index-page .my-container .big-card .index-header h1 span:nth-child(2) {
-  color: #e4e4e4;
-  font-size: 8rem;
-}
-
-.index-page .my-container .big-card .index-header h1 span:nth-child(3) {
-  font-size: 14rem;
-  position: relative;
-}
-
-.index-page .my-container .big-card .index-header h1 span:nth-child(3) span {
-  position: absolute;
-  bottom: 5%;
-  right: 0;
-}
-
-.index-page .my-container .big-card .index-slogan {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #d8d8d8;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto 10rem;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container {
-  width: 400px;
-  height: 150px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.index-page .my-container .big-card .index-slogan .slogan-container span {
-  color: #ff9b0f;
-  font-size: 10rem;
-  letter-spacing: -15px;
-}
-
-.index-page .my-container .big-card .index-slogan .slogan-container .top-quote,
-.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote,
-.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan,
-.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan,
-.index-page .my-container .big-card .index-slogan .slogan-container .line {
+.index-page .my-container .first .title p,
+.index-page .my-container .first .title span {
   position: absolute;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container .top-quote {
-  bottom: -30%;
+.index-page .my-container .first .title p {
+  top: 40px;
+  left: 40px;
+  font-size: 2rem;
+  color: #880088;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container .top-slogan {
-  top: 15%;
-  left: 15%;
+.index-page .my-container .first .title span {
+  bottom: 0;
+  right: -5px;
+  font-size: 8rem;
+  color: #aa0000;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container .bottom-quote {
-  right: 2%;
-  bottom: -50%;
+.index-page .my-container .first .title h1 {
+  font-size: 12rem;
+  letter-spacing: -16px;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container .bottom-slogan {
-  right: 15%;
-  top: 35%;
+.index-page .my-container .second {
+  background-color: #ff9b0f;
+  background-image: url("/images/Rainbow-Vortex.svg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.index-page .my-container .big-card .index-slogan .slogan-container .line {
-  width: 225px;
-  border-bottom: 2px dashed #000;
-  opacity: 0.6;
-  top: 32%;
-  right: 23%;
+.index-page .my-container .second .svg-circle {
+  background-image: url("/images/Rainbow-Vortex.svg");
 }
 
-.index-page .my-container .big-card .index-slogan h2 > span {
-  font-weight: bold;
-  color: #ff9b0f;
+.index-page .my-container .second .svg-icon {
+  background-image: url("/images/Credit-Card.svg");
 }
 
-.index-page .my-container .big-card .index-slogan .mobile-index {
-  display: none;
+.index-page .my-container .third {
+  background-color: #330033;
+  background-image: url("/images/Endless-Constellation.svg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.index-page .my-container .third .svg-circle {
+  background-image: url("/images/Endless-Constellation.svg");
+}
+
+.index-page .my-container .third .svg-icon {
+  background-image: url("/images/Webpage.svg");
+}
+
+.index-page .my-container .fourth {
+  height: 200vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #fff), to(#330033));
+  background-image: linear-gradient(to top, #fff 10%, #330033);
+}
+
+.index-page .my-container .fith {
+  height: 70vh;
+  background-color: #fff;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.index-page .my-container .fith .email {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.index-page .my-container .fith .email .svg-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url("/images/Mail.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.index-page .my-container .fith .email a {
+  font-size: 4rem;
+  color: #880088;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.index-page .my-container .fith a {
+  margin-top: 10rem;
 }
 
 .post-container {
@@ -11421,27 +11456,48 @@ ul {
           flex: 1;
 }
 
+@media (min-width: 768px) {
+  .index-page .my-container .zero.second,
+  .index-page .my-container .zero.third {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .index-page .my-container .zero .svg-text {
+    font-size: 5rem;
+  }
+}
+
 @media (max-width: 767px) {
   * {
     min-width: 0;
   }
 
-  .meta-container {
-    position: relative;
-    margin: 0;
-    height: auto;
+  .index-page .fith {
+    min-height: 85vh;
+    padding: 0 2rem;
   }
 
-  .meta-container .dashboard-container {
+  .index-page .fith .email a {
+    word-break: break-all;
+  }
+
+  .index-page .fith a {
+    margin-top: 5rem !important;
+  }
+
+  .dashboard-container {
     width: 100%;
   }
 
-  .meta-container .dashboard-container .card-header {
+  .dashboard-container .card-header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
-  .meta-container .dashboard-container .feed-container .card-body .dual-api-container {
+  .dashboard-container .feed-container .card-body .dual-api-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11451,75 +11507,57 @@ ul {
             flex-direction: column;
   }
 
-  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-weather {
+  .dashboard-container .feed-container .card-body .dual-api-container .api-weather {
     margin-right: 0;
   }
 
-  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-weather .card-body {
+  .dashboard-container .feed-container .card-body .dual-api-container .api-weather .card-body {
     padding: 0.8rem;
   }
 
-  .meta-container .dashboard-container .feed-container .card-body .dual-api-container .api-map .map-container {
+  .dashboard-container .feed-container .card-body .dual-api-container .api-map .map-container {
     height: 250px;
     max-height: 300px;
     width: auto;
   }
 
-  .meta-container .dashboard-container .feed-container .waka-lang-wrapper,
-  .meta-container .dashboard-container .feed-container .waka-time-wrapper {
+  .dashboard-container .feed-container .waka-lang-wrapper,
+  .dashboard-container .feed-container .waka-time-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 
-  .meta-container .dashboard-container .feed-container .waka-lang-wrapper .waka-lang-list ul,
-  .meta-container .dashboard-container .feed-container .waka-time-wrapper .waka-lang-list ul {
+  .dashboard-container .feed-container .waka-lang-wrapper .waka-lang-list ul,
+  .dashboard-container .feed-container .waka-time-wrapper .waka-lang-list ul {
     height: auto;
   }
 
-  .meta-container .dashboard-container .tags-container {
+  .dashboard-container .tags-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
 
-  .meta-container .dashboard-container .tags-container .tags {
+  .dashboard-container .tags-container .tags {
     margin-bottom: 1rem;
   }
 
-  .meta-container .dashboard-container .tags-container .tags .my-card-list li {
+  .dashboard-container .tags-container .tags .my-card-list li {
     padding-right: 3rem;
     margin-bottom: 0.5rem;
   }
 
-  .meta-container .dashboard-container .tags-container form input[type="text"] {
+  .dashboard-container .tags-container form input[type="text"] {
     border: 1px solid #000;
     border-radius: 5px;
     padding-left: 0.5rem;
     margin-bottom: 1rem;
   }
-}
 
-@media (max-width: 767px) and (max-width: 400px) {
-  .meta-container .posts-table-container table thead th:nth-child(3),
-  .meta-container .posts-table-container table thead th:nth-child(4),
-  .meta-container .posts-table-container table thead th:nth-child(5),
-  .meta-container .posts-table-container table thead th:nth-child(7) {
-    display: none;
-  }
-
-  .meta-container .posts-table-container table tbody td:nth-child(3),
-  .meta-container .posts-table-container table tbody td:nth-child(4),
-  .meta-container .posts-table-container table tbody td:nth-child(5),
-  .meta-container .posts-table-container table tbody td:nth-child(7) {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .meta-container .mobile-nav {
+  .mobile-nav {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ff9b0f), to(#ff5b43));
     background: linear-gradient(#ff9b0f 50%, #ff5b43);
     display: block;
@@ -11527,26 +11565,26 @@ ul {
     width: 100%;
   }
 
-  .meta-container .mobile-nav-clear {
+  .mobile-nav-clear {
     display: block;
     width: 100%;
     height: 3rem;
   }
 
-  .meta-container .posts-index {
+  .posts-index {
     width: 100%;
   }
 
-  .meta-container .post-container {
+  .post-container {
     padding: 0 1rem;
     width: auto;
   }
 
-  .meta-container .post-container .post {
+  .post-container .post {
     padding: 0 1rem 1rem;
   }
 
-  .meta-container .post-container .post .post-title-tag-cat {
+  .post-container .post .post-title-tag-cat {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -11554,24 +11592,24 @@ ul {
     margin-top: 1rem;
   }
 
-  .meta-container .post-container .post .post-title {
+  .post-container .post .post-title {
     margin-bottom: 1rem;
   }
 
-  .meta-container .post-container .post .post-body {
+  .post-container .post .post-body {
     margin-bottom: 2rem;
   }
 
-  .meta-container .post-container .post .post-labels {
+  .post-container .post .post-labels {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
-  .meta-container .post-container .post .post-labels .post-created-at {
+  .post-container .post .post-labels .post-created-at {
     text-align: left;
   }
 
-  .meta-container .post-container .post .post-comment-section {
+  .post-container .post .post-comment-section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11581,199 +11619,16 @@ ul {
             flex-direction: column;
   }
 
-  .meta-container .post-container .post .post-comment-section form {
+  .post-container .post .post-comment-section form {
     margin-right: 0 !important;
   }
 
-  .meta-container .post-container .post .post-comment-section .comment-container {
+  .post-container .post .post-comment-section .comment-container {
     margin-top: 1rem;
   }
 
-  .meta-container .post-container .post .post-comment-section .comment-container .comment {
+  .post-container .post .post-comment-section .comment-container .comment {
     margin-bottom: 1.5rem;
-  }
-
-  .meta-container .my-container {
-    min-width: 300px;
-    padding: 0 1rem 1rem;
-  }
-
-  .meta-container .my-container .mobile-nav {
-    display: none;
-  }
-
-  .meta-container .my-container .big-card {
-    padding: 0;
-  }
-
-  .meta-container .my-container .big-card .my-navbar,
-  .meta-container .my-container .big-card .nav-links {
-    display: none;
-  }
-
-  .meta-container .my-container .big-card .index-header {
-    height: inherit;
-    overflow: hidden;
-  }
-
-  .meta-container .my-container .big-card .index-header .header-container {
-    height: inherit;
-    width: inherit !important;
-  }
-
-  .meta-container .my-container .big-card .index-header .header-container h1 {
-    height: inherit;
-    position: relative;
-  }
-
-  .meta-container .my-container .big-card .index-header .header-container h1 span:nth-child(3) {
-    position: absolute;
-    bottom: -38%;
-    left: 0;
-    width: 325px;
-    margin-left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    font-size: 13rem;
-  }
-
-  .meta-container .my-container .big-card .index-header .header-container h1 span:nth-child(3) span {
-    position: absolute;
-    bottom: 0;
-    right: 11%;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .slogan-container {
-    display: none;
-  }
-
-  .meta-container .my-container .big-card .index-slogan h2 {
-    margin-bottom: 1rem;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    width: 100%;
-    -webkit-box-orient: inherit;
-    -webkit-box-direction: inherit;
-        -ms-flex-direction: inherit;
-            flex-direction: inherit;
-    padding: 0 2rem;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog {
-    display: inherit;
-    -webkit-box-flex: 4;
-        -ms-flex: 4;
-            flex: 4;
-    width: 100%;
-    -webkit-box-orient: inherit;
-    -webkit-box-direction: inherit;
-        -ms-flex-direction: inherit;
-            flex-direction: inherit;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    text-transform: lowercase;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons a,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper a,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper a,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio a,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog a {
-    color: #ff9b0f;
-    -webkit-text-decoration: underline #d8d8d8 wavy;
-            text-decoration: underline #d8d8d8 wavy;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper {
-    border-radius: 0 0 20px 20px;
-    -webkit-box-shadow: 0px 25px 30px 2px rgba(0, 0, 0, 0.08);
-            box-shadow: 0px 25px 30px 2px rgba(0, 0, 0, 0.08);
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper {
-    margin-bottom: 1rem;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-portfolio-wrapper .btn-portfolio,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-portfolio-wrapper .btn-portfolio,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-portfolio-wrapper .btn-portfolio,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-portfolio-wrapper .btn-portfolio,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-portfolio-wrapper .btn-portfolio {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper {
-    margin-top: 1rem;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index .mobile-index-buttons .btn-blog-wrapper .btn-blog,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio-wrapper .btn-blog-wrapper .btn-blog,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog-wrapper .btn-blog-wrapper .btn-blog,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-portfolio .btn-blog-wrapper .btn-blog,
-  .meta-container .my-container .big-card .index-slogan .mobile-index .btn-blog .btn-blog-wrapper .btn-blog {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .meta-container .my-container .big-card .index-slogan .mobile-index-footer p {
-    font-size: 0.8rem;
   }
 
   .my-navbar {
@@ -11847,206 +11702,19 @@ ul {
   }
 }
 
-.new-index-page .new-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
+@media (max-width: 414px) {
+  .posts-table-container table thead th:nth-child(3),
+  .posts-table-container table thead th:nth-child(4),
+  .posts-table-container table thead th:nth-child(5),
+  .posts-table-container table thead th:nth-child(7) {
+    display: none;
+  }
 
-.new-index-page .new-container .zero {
-  width: 100%;
-  height: 125vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.new-index-page .new-container .zero .svg-circle-container {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: relative;
-}
-
-.new-index-page .new-container .zero .svg-circle-container .svg-circle {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background-size: cover;
-  border: 4px dashed #000;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-}
-
-.new-index-page .new-container .zero .svg-circle-container .svg-icon {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 25%;
-  left: 25%;
-}
-
-.new-index-page .new-container .zero h1 {
-  font-size: 2rem;
-  color: #ff7700;
-  font-weight: bold;
-  text-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
-  -webkit-text-stroke: 0.8px #000;
-}
-
-.new-index-page .new-container .first {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-color: #ff9b0f;
-  background-image: url("/images/Flat-Mountains.svg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.new-index-page .new-container .first .title {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin: 0 auto 10rem;
-}
-
-.new-index-page .new-container .first .title p,
-.new-index-page .new-container .first .title span {
-  position: absolute;
-}
-
-.new-index-page .new-container .first .title p {
-  top: 40px;
-  left: 40px;
-  font-size: 2rem;
-  color: #880088;
-}
-
-.new-index-page .new-container .first .title span {
-  bottom: 0;
-  right: -5px;
-  font-size: 8rem;
-  color: #aa0000;
-}
-
-.new-index-page .new-container .first .title h1 {
-  font-size: 12rem;
-  letter-spacing: -16px;
-}
-
-.new-index-page .new-container .second {
-  background-color: #ff9b0f;
-  background-image: url("/images/Rainbow-Vortex.svg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.new-index-page .new-container .second .svg-circle {
-  background-image: url("/images/Rainbow-Vortex.svg");
-}
-
-.new-index-page .new-container .second .svg-icon {
-  background-image: url("/images/Credit-Card.svg");
-}
-
-.new-index-page .new-container .third {
-  background-color: #330033;
-  background-image: url("/images/Endless-Constellation.svg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.new-index-page .new-container .third .svg-circle {
-  background-image: url("/images/Endless-Constellation.svg");
-}
-
-.new-index-page .new-container .third .svg-icon {
-  background-image: url("/images/Webpage.svg");
-}
-
-.new-index-page .new-container .fourth {
-  height: 200vh;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #fff), to(#330033));
-  background-image: linear-gradient(to top, #fff 10%, #330033);
-}
-
-.new-index-page .new-container .fith {
-  height: 70vh;
-  background-color: #fff;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.new-index-page .new-container .fith .email {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.new-index-page .new-container .fith .email .svg-icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  background-image: url("/images/Mail.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.new-index-page .new-container .fith .email a {
-  font-size: 4rem;
-  color: #880088;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.new-index-page .new-container .fith a {
-  margin-top: 10rem;
+  .posts-table-container table tbody td:nth-child(3),
+  .posts-table-container table tbody td:nth-child(4),
+  .posts-table-container table tbody td:nth-child(5),
+  .posts-table-container table tbody td:nth-child(7) {
+    display: none;
+  }
 }
 

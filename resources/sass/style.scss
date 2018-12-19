@@ -225,118 +225,143 @@ $stdWidth: 800px;
 .index-page {
     .my-container {
         display: flex;
+        flex-direction: column;
         width: 100%;
-        min-width: $stdWidth;
-        height: 100vh;
-        min-height: 650px;
-        padding: 0 4rem 3rem;
-        .big-card {
-            display: flex;
-            flex-direction: column;
+        height: 100%;
+        .zero {
             width: 100%;
-            height: 100%;
-            padding: 1rem;
+            height: 125vh;
+            display: flex;
             align-items: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.07);
-            position: relative;
-            .index-header {
-                display: flex;
-                width: 100%;
-                height: 100%;
-                min-height: 200px;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                .header-container {
-                    display: flex;
-                    width: 600px;
+            justify-content: space-evenly;
+            flex-direction: column;
+            .svg-circle-container {
+                width: fit-content;
+                height: fit-content;
+                position: relative;
+                .svg-circle {
+                    width: 300px;
+                    height: 300px;
                     margin: 0 auto;
-                    justify-content: flex-end;
+                    border-radius: 50%;
+                    background-size: cover;
+                    border: 4px dashed #000;
+                    filter: blur(3px);
+                }
+                .svg-icon {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    top: 25%;
+                    left: 25%;
+                }
+            }
+            h1 {
+                font-size: 2rem;
+                color: #ff7700;
+                font-weight: bold;
+                text-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
+                -webkit-text-stroke: 0.8px #000;
+            }
+        }
+
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            background-color: $myOrange;
+            background-image: url("/images/Flat-Mountains.svg");
+            background-attachment: fixed;
+            background-size: cover;
+            .title {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: fit-content;
+                height: fit-content;
+                margin: 0 auto 10rem;
+                p,
+                span {
+                    position: absolute;
+                }
+                p {
+                    top: 40px;
+                    left: 40px;
+                    font-size: 2rem;
+                    color: $darkPurple;
+                }
+                span {
+                    bottom: 0;
+                    right: -5px;
+                    font-size: 8rem;
+                    color: $darkRed;
                 }
                 h1 {
-                    width: 100%;
-                    height: 100%;
-                    min-height: 250px;
-                    text-align: center;
-                    font-size: 8rem;
-                    letter-spacing: -12px;
-                    position: relative;
-                    span:first-child {
-                        color: $myOrange;
-                    }
-                    span:nth-child(2) {
-                        color: $lightGrey;
-                        font-size: 8rem;
-                    }
-                    span:nth-child(3) {
-                        font-size: 14rem;
-                        position: relative;
-                        span {
-                            position: absolute;
-                            bottom: 5%;
-                            right: 0;
-                        }
-                    }
+                    font-size: 12rem;
+                    letter-spacing: -16px;
                 }
             }
-            .index-slogan {
-                display: flex;
-                width: 100%;
-                height: 100%;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                color: $darkGrey;
-                .slogan-container {
-                    width: 400px;
-                    height: 150px;
+        }
+
+        .second {
+            background-color: $myOrange;
+            background-image: url("/images/Rainbow-Vortex.svg");
+            background-attachment: fixed;
+            background-size: cover;
+            .svg-circle {
+                background-image: url("/images/Rainbow-Vortex.svg");
+            }
+            .svg-icon {
+                background-image: url("/images/Credit-Card.svg");
+            }
+        }
+
+        .third {
+            background-color: #330033;
+            background-image: url("/images/Endless-Constellation.svg");
+            background-attachment: fixed;
+            background-size: cover;
+            .svg-circle {
+                background-image: url("/images/Endless-Constellation.svg");
+            }
+            .svg-icon {
+                background-image: url("/images/Webpage.svg");
+            }
+        }
+        .fourth {
+            height: 200vh;
+            background-image: linear-gradient(to top, #fff 10%, #330033);
+        }
+        .fith {
+            height: 70vh;
+            background-color: #fff;
+            justify-content: flex-start;
+            .email {
+                width: fit-content;
+                .svg-icon {
+                    width: 100px;
+                    height: 100px;
                     margin: 0 auto;
-                    position: relative;
-                    overflow: hidden;
-                    span {
-                        color: $myOrange;
-                        font-size: 10rem;
-                        letter-spacing: -15px;
-                    }
-                    .top-quote,
-                    .bottom-quote,
-                    .top-slogan,
-                    .bottom-slogan,
-                    .line {
-                        position: absolute;
-                    }
-                    .top-quote {
-                        bottom: -30%;
-                    }
-                    .top-slogan {
-                        top: 15%;
-                        left: 15%;
-                    }
-                    .bottom-quote {
-                        right: 2%;
-                        bottom: -50%;
-                    }
-                    .bottom-slogan {
-                        right: 15%;
-                        top: 35%;
-                    }
-                    .line {
-                        width: 225px;
-                        border-bottom: 2px dashed #000;
-                        opacity: 0.6;
-                        top: 32%;
-                        right: 23%;
-                    }
+                    background-image: url("/images/Mail.svg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
                 }
-                h2 > span {
-                    font-weight: bold;
-                    color: $myOrange;
-                }
-                .mobile-index {
-                    display: none;
+                a {
+                    font-size: 4rem;
+                    color: $darkPurple;
+                    flex-wrap: wrap;
                 }
             }
+            a {
+                margin-top: 10rem;
+            }
+        }
+        .sixth {
+            //
         }
     }
 }
@@ -479,7 +504,6 @@ $stdWidth: 800px;
         .feed-container {
             .dual-api-container {
                 display: flex;
-                // flex-direction: row;
                 .api-weather {
                     margin-right: 1rem;
                     #weather-details.card-body {
@@ -680,249 +704,144 @@ $stdWidth: 800px;
     }
 }
 
-// Main Mobile View
+@media (min-width: 768px) {
+    .index-page {
+        .my-container {
+            .zero {
+                &.second,
+                &.third {
+                    flex-direction: row;
+                    // height: 100vh;
+                }
+                .svg-text {
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+}
+
+// Mobile View - Up to Ipad
 @media (max-width: 767px) {
     * {
         min-width: 0;
     }
-    .meta-container {
-        position: relative;
-        margin: 0;
-        height: auto;
-        // min-height: 650px;
-
-        .dashboard-container {
-            width: 100%;
-            .card-header {
-                flex-wrap: wrap;
-            }
-            .feed-container {
-                .card-body {
-                    .dual-api-container {
-                        display: flex;
-                        flex-direction: column;
-                        .api-weather {
-                            margin-right: 0;
-                            .card-body {
-                                padding: 0.8rem;
-                            }
-                        }
-                        .api-map {
-                            .map-container {
-                                height: 250px;
-                                max-height: 300px;
-                                width: auto;
-                            }
-                        }
-                    }
-                }
-                .waka-lang-wrapper,
-                .waka-time-wrapper {
-                    flex-direction: column;
-                    .waka-lang-list {
-                        ul {
-                            height: auto;
-                        }
-                    }
+    .index-page {
+        .fith {
+            min-height: 85vh;
+            padding: 0 2rem;
+            .email {
+                a {
+                    word-break: break-all;
                 }
             }
-            .tags-container {
-                flex-direction: column-reverse;
-                .tags {
-                    margin-bottom: 1rem;
-                    .my-card-list {
-                        li {
-                            padding-right: 3rem;
-                            margin-bottom: 0.5rem;
-                        }
-                    }
-                }
-                form {
-                    input[type="text"] {
-                        border: 1px solid #000;
-                        border-radius: 5px;
-                        padding-left: 0.5rem;
-                        margin-bottom: 1rem;
-                    }
-                }
+            a {
+                margin-top: 5rem !important;
             }
         }
-        @media (max-width: 400px) {
-            .posts-table-container {
-                table {
-                    thead {
-                        th:nth-child(3),
-                        th:nth-child(4),
-                        th:nth-child(5),
-                        th:nth-child(7) {
-                            display: none;
-                        }
-                    }
-                    tbody {
-                        td:nth-child(3),
-                        td:nth-child(4),
-                        td:nth-child(5),
-                        td:nth-child(7) {
-                            display: none;
-                        }
-                    }
-                }
-            }
+    }
+    .dashboard-container {
+        width: 100%;
+        .card-header {
+            flex-wrap: wrap;
         }
-
-        .mobile-nav {
-            background: linear-gradient(#ff9b0f 50%, #ff5b43);
-            display: block;
-            height: 3rem;
-            width: 100%;
-            // position: fixed;
-        }
-        .mobile-nav-clear {
-            display: block;
-            width: 100%;
-            height: 3rem;
-        }
-        .posts-index {
-            width: 100%;
-        }
-        .post-container {
-            padding: 0 1rem;
-            width: auto;
-            .post {
-                padding: 0 1rem 1rem;
-                .post-title-tag-cat {
-                    flex-direction: column;
-                    margin-top: 1rem;
-                }
-                .post-title {
-                    margin-bottom: 1rem;
-                }
-                .post-body {
-                    margin-bottom: 2rem;
-                }
-                .post-labels {
-                    flex-wrap: wrap;
-                    .post-created-at {
-                        text-align: left;
-                    }
-                }
-                .post-comment-section {
+        .feed-container {
+            .card-body {
+                .dual-api-container {
                     display: flex;
                     flex-direction: column;
-                    form {
-                        margin-right: 0 !important;
-                    }
-                    .comment-container {
-                        margin-top: 1rem;
-                        .comment {
-                            margin-bottom: 1.5rem;
+                    .api-weather {
+                        margin-right: 0;
+                        .card-body {
+                            padding: 0.8rem;
                         }
+                    }
+                    .api-map {
+                        .map-container {
+                            height: 250px;
+                            max-height: 300px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .waka-lang-wrapper,
+            .waka-time-wrapper {
+                flex-direction: column;
+                .waka-lang-list {
+                    ul {
+                        height: auto;
                     }
                 }
             }
         }
-
-        // Index page
-        .my-container {
-            min-width: 300px;
-            padding: 0 1rem 1rem;
-            .mobile-nav {
-                display: none;
+        .tags-container {
+            flex-direction: column-reverse;
+            .tags {
+                margin-bottom: 1rem;
+                .my-card-list {
+                    li {
+                        padding-right: 3rem;
+                        margin-bottom: 0.5rem;
+                    }
+                }
             }
-            .big-card {
-                padding: 0;
-                .my-navbar,
-                .nav-links {
-                    display: none;
+            form {
+                input[type="text"] {
+                    border: 1px solid #000;
+                    border-radius: 5px;
+                    padding-left: 0.5rem;
+                    margin-bottom: 1rem;
                 }
-                .index-header {
-                    height: inherit;
-                    overflow: hidden;
-                    .header-container {
-                        height: inherit;
-                        width: inherit !important;
-                        h1 {
-                            height: inherit;
-                            position: relative;
-                            span:nth-child(3) {
-                                position: absolute;
-                                bottom: -38%;
-                                left: 0;
-                                width: 325px;
-                                margin-left: 50%;
-                                transform: translate(-50%, -50%);
-                                font-size: 13rem;
-                                span {
-                                    position: absolute;
-                                    bottom: 0;
-                                    right: 11%;
-                                }
-                            }
-                        }
-                    }
+            }
+        }
+    }
+
+    .mobile-nav {
+        background: linear-gradient(#ff9b0f 50%, #ff5b43);
+        display: block;
+        height: 3rem;
+        width: 100%;
+    }
+    .mobile-nav-clear {
+        display: block;
+        width: 100%;
+        height: 3rem;
+    }
+    .posts-index {
+        width: 100%;
+    }
+    .post-container {
+        padding: 0 1rem;
+        width: auto;
+        .post {
+            padding: 0 1rem 1rem;
+            .post-title-tag-cat {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+            .post-title {
+                margin-bottom: 1rem;
+            }
+            .post-body {
+                margin-bottom: 2rem;
+            }
+            .post-labels {
+                flex-wrap: wrap;
+                .post-created-at {
+                    text-align: left;
                 }
-                .index-slogan {
-                    .slogan-container {
-                        display: none;
-                    }
-                    h2 {
-                        margin-bottom: 1rem;
-                    }
-                    .mobile-index {
-                        display: flex;
-                        flex: 1;
-                        width: 100%;
-                        flex-direction: inherit;
-                        padding: 0 2rem;
-                        .mobile-index-buttons {
-                            justify-content: space-around;
-                        }
-                        .mobile-index-buttons,
-                        .btn-portfolio-wrapper,
-                        .btn-blog-wrapper,
-                        .btn-portfolio,
-                        .btn-blog {
-                            display: inherit;
-                            flex: 4;
-                            width: 100%;
-                            flex-direction: inherit;
-                            align-items: center;
-                            justify-content: center;
-                            text-transform: lowercase;
-                            font-size: 2rem;
-                            font-weight: bold;
-                            a {
-                                color: $myOrange;
-                                text-decoration: underline $darkGrey wavy;
-                            }
-                            .btn-portfolio-wrapper,
-                            .btn-blog-wrapper {
-                                border-radius: 0 0 20px 20px;
-                                box-shadow: 0px 25px 30px 2px
-                                    rgba(0, 0, 0, 0.08);
-                            }
-                            .btn-portfolio-wrapper {
-                                margin-bottom: 1rem;
-                                .btn-portfolio {
-                                    flex: 1;
-                                }
-                            }
-                            .btn-blog-wrapper {
-                                margin-top: 1rem;
-                                .btn-blog {
-                                    flex: 1;
-                                }
-                            }
-                        }
-                    }
-                    .mobile-index-footer {
-                        display: flex;
-                        flex: 1;
-                        justify-content: center;
-                        align-items: center;
-                        p {
-                            font-size: 0.8rem;
-                        }
+            }
+            .post-comment-section {
+                display: flex;
+                flex-direction: column;
+                form {
+                    margin-right: 0 !important;
+                }
+                .comment-container {
+                    margin-top: 1rem;
+                    .comment {
+                        margin-bottom: 1.5rem;
                     }
                 }
             }
@@ -989,147 +908,25 @@ $stdWidth: 800px;
     }
 }
 
-.new-index-page {
-    .new-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-
-        .zero {
-            width: 100%;
-            height: 125vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            flex-direction: column;
-            .svg-circle-container {
-                width: fit-content;
-                height: fit-content;
-                position: relative;
-                .svg-circle {
-                    width: 300px;
-                    height: 300px;
-                    margin: 0 auto;
-                    border-radius: 50%;
-                    background-size: cover;
-                    border: 4px dashed #000;
-                    filter: blur(3px);
-                }
-                .svg-icon {
-                    position: absolute;
-                    width: 150px;
-                    height: 150px;
-                    top: 25%;
-                    left: 25%;
+@media (max-width: 414px) {
+    .posts-table-container {
+        table {
+            thead {
+                th:nth-child(3),
+                th:nth-child(4),
+                th:nth-child(5),
+                th:nth-child(7) {
+                    display: none;
                 }
             }
-            h1 {
-                font-size: 2rem;
-                color: #ff7700;
-                font-weight: bold;
-                text-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
-                -webkit-text-stroke: 0.8px #000;
-            }
-        }
-
-        .first {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100vh;
-            background-color: $myOrange;
-            background-image: url("/images/Flat-Mountains.svg");
-            background-attachment: fixed;
-            background-size: cover;
-            .title {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: fit-content;
-                height: fit-content;
-                margin: 0 auto 10rem;
-                p,
-                span {
-                    position: absolute;
-                }
-                p {
-                    top: 40px;
-                    left: 40px;
-                    font-size: 2rem;
-                    color: $darkPurple;
-                }
-                span {
-                    bottom: 0;
-                    right: -5px;
-                    font-size: 8rem;
-                    color: $darkRed;
-                }
-                h1 {
-                    font-size: 12rem;
-                    letter-spacing: -16px;
+            tbody {
+                td:nth-child(3),
+                td:nth-child(4),
+                td:nth-child(5),
+                td:nth-child(7) {
+                    display: none;
                 }
             }
-        }
-
-        .second {
-            background-color: $myOrange;
-            background-image: url("/images/Rainbow-Vortex.svg");
-            background-attachment: fixed;
-            background-size: cover;
-            .svg-circle {
-                background-image: url("/images/Rainbow-Vortex.svg");
-            }
-            .svg-icon {
-                background-image: url("/images/Credit-Card.svg");
-            }
-        }
-
-        .third {
-            background-color: #330033;
-            background-image: url("/images/Endless-Constellation.svg");
-            background-attachment: fixed;
-            background-size: cover;
-            .svg-circle {
-                background-image: url("/images/Endless-Constellation.svg");
-            }
-            .svg-icon {
-                background-image: url("/images/Webpage.svg");
-            }
-        }
-        .fourth {
-            height: 200vh;
-            background-image: linear-gradient(to top, #fff 10%, #330033);
-        }
-        .fith {
-            height: 70vh;
-            background-color: #fff;
-            justify-content: flex-start;
-            .email {
-                width: fit-content;
-                .svg-icon {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 auto;
-                    background-image: url("/images/Mail.svg");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                }
-                a {
-                    font-size: 4rem;
-                    color: $darkPurple;
-                    flex-wrap: wrap;
-                }
-            }
-            a {
-                margin-top: 10rem;
-            }
-        }
-        .sixth {
-            //
         }
     }
 }

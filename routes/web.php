@@ -30,7 +30,3 @@ Route::resource('comments', 'CommentsController');
 
 // Tags Controller routes
 Route::resource('tags', 'TagsController');
-
-Route::get('/new-index', function() {
-  return view('pages.index_test');
-});
