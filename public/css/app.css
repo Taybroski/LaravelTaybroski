@@ -10866,16 +10866,16 @@ ul {
   color: #880088;
 }
 
+.index-page .my-container .first .title h1 {
+  font-size: 12rem;
+  letter-spacing: -16px;
+}
+
 .index-page .my-container .first .title span {
   bottom: 0;
   right: -5px;
   font-size: 8rem;
   color: #aa0000;
-}
-
-.index-page .my-container .first .title h1 {
-  font-size: 12rem;
-  letter-spacing: -16px;
 }
 
 .index-page .my-container .second {
@@ -10940,8 +10940,6 @@ ul {
 .index-page .my-container .fith .email a {
   font-size: 4rem;
   color: #880088;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .index-page .my-container .fith a {
@@ -11482,22 +11480,25 @@ ul {
 
   .index-page .fith .email a {
     word-break: break-all;
+    word-wrap: break-word;
   }
 
   .index-page .fith a {
     margin-top: 5rem !important;
   }
 
-  .dashboard-container {
-    width: 100%;
+  .dashboard-page .dashboard-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
-  .dashboard-container .card-header {
+  .dashboard-page .dashboard-container .card-header {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
-  .dashboard-container .feed-container .card-body .dual-api-container {
+  .dashboard-page .dashboard-container .feed-container .card-body .dual-api-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11507,50 +11508,50 @@ ul {
             flex-direction: column;
   }
 
-  .dashboard-container .feed-container .card-body .dual-api-container .api-weather {
+  .dashboard-page .dashboard-container .feed-container .card-body .dual-api-container .api-weather {
     margin-right: 0;
   }
 
-  .dashboard-container .feed-container .card-body .dual-api-container .api-weather .card-body {
+  .dashboard-page .dashboard-container .feed-container .card-body .dual-api-container .api-weather .card-body {
     padding: 0.8rem;
   }
 
-  .dashboard-container .feed-container .card-body .dual-api-container .api-map .map-container {
+  .dashboard-page .dashboard-container .feed-container .card-body .dual-api-container .api-map .map-container {
     height: 250px;
     max-height: 300px;
     width: auto;
   }
 
-  .dashboard-container .feed-container .waka-lang-wrapper,
-  .dashboard-container .feed-container .waka-time-wrapper {
+  .dashboard-page .dashboard-container .feed-container .waka-lang-wrapper,
+  .dashboard-page .dashboard-container .feed-container .waka-time-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 
-  .dashboard-container .feed-container .waka-lang-wrapper .waka-lang-list ul,
-  .dashboard-container .feed-container .waka-time-wrapper .waka-lang-list ul {
+  .dashboard-page .dashboard-container .feed-container .waka-lang-wrapper .waka-lang-list ul,
+  .dashboard-page .dashboard-container .feed-container .waka-time-wrapper .waka-lang-list ul {
     height: auto;
   }
 
-  .dashboard-container .tags-container {
+  .dashboard-page .dashboard-container .tags-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
 
-  .dashboard-container .tags-container .tags {
+  .dashboard-page .dashboard-container .tags-container .tags {
     margin-bottom: 1rem;
   }
 
-  .dashboard-container .tags-container .tags .my-card-list li {
+  .dashboard-page .dashboard-container .tags-container .tags .my-card-list li {
     padding-right: 3rem;
     margin-bottom: 0.5rem;
   }
 
-  .dashboard-container .tags-container form input[type="text"] {
+  .dashboard-page .dashboard-container .tags-container form input[type="text"] {
     border: 1px solid #000;
     border-radius: 5px;
     padding-left: 0.5rem;
@@ -11575,59 +11576,61 @@ ul {
     width: 100%;
   }
 
-  .post-container {
+  .posts-show-page .post-container {
     padding: 0 1rem;
     width: auto;
   }
 
-  .post-container .post {
+  .posts-show-page .post-container .post {
     padding: 0 1rem 1rem;
   }
 
-  .post-container .post .post-title-tag-cat {
+  .posts-show-page .post-container .post .post-title-tag-cat {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 1rem;
+    margin: 1rem 0 1rem;
   }
 
-  .post-container .post .post-title {
+  .posts-show-page .post-container .post .post-title {
     margin-bottom: 1rem;
   }
 
-  .post-container .post .post-body {
+  .posts-show-page .post-container .post .post-body {
     margin-bottom: 2rem;
   }
 
-  .post-container .post .post-labels {
+  .posts-show-page .post-container .post .post-labels {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
-  .post-container .post .post-labels .post-created-at {
+  .posts-show-page .post-container .post .post-labels .post-created-at {
     text-align: left;
   }
 
-  .post-container .post .post-comment-section {
+  .posts-show-page .post-container .post .post-comment-section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 
-  .post-container .post .post-comment-section form {
+  .posts-show-page .post-container .post .post-comment-section form {
     margin-right: 0 !important;
   }
 
-  .post-container .post .post-comment-section .comment-container {
+  .posts-show-page .post-container .post .post-comment-section .comment-container {
     margin-top: 1rem;
   }
 
-  .post-container .post .post-comment-section .comment-container .comment {
+  .posts-show-page .post-container .post .post-comment-section .comment-container .comment {
     margin-bottom: 1.5rem;
   }
 
@@ -11690,15 +11693,6 @@ ul {
 
   .my-navbar .nav-links .nav-link a:hover {
     text-decoration: none;
-  }
-
-  .posts-show-page .post-container .post .post-title-tag-cat {
-    margin: 1rem 0 1rem;
-  }
-
-  .posts-show-page .post-container .post .post-title-tag-cat .post-labels {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
   }
 }
 

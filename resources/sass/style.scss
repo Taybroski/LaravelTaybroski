@@ -84,6 +84,7 @@ video {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
+    // font-family: "Trebuchet MS", sans-serif;
 }
 a,
 a:hover {
@@ -294,15 +295,15 @@ $stdWidth: 800px;
                     font-size: 2rem;
                     color: $darkPurple;
                 }
+                h1 {
+                    font-size: 12rem;
+                    letter-spacing: -16px;
+                }
                 span {
                     bottom: 0;
                     right: -5px;
                     font-size: 8rem;
                     color: $darkRed;
-                }
-                h1 {
-                    font-size: 12rem;
-                    letter-spacing: -16px;
                 }
             }
         }
@@ -353,7 +354,6 @@ $stdWidth: 800px;
                 a {
                     font-size: 4rem;
                     color: $darkPurple;
-                    flex-wrap: wrap;
                 }
             }
             a {
@@ -733,6 +733,7 @@ $stdWidth: 800px;
             .email {
                 a {
                     word-break: break-all;
+                    word-wrap: break-word;
                 }
             }
             a {
@@ -740,58 +741,60 @@ $stdWidth: 800px;
             }
         }
     }
-    .dashboard-container {
-        width: 100%;
-        .card-header {
-            flex-wrap: wrap;
-        }
-        .feed-container {
-            .card-body {
-                .dual-api-container {
-                    display: flex;
+    .dashboard-page {
+        .dashboard-container {
+            width: fit-content;
+            .card-header {
+                flex-wrap: wrap;
+            }
+            .feed-container {
+                .card-body {
+                    .dual-api-container {
+                        display: flex;
+                        flex-direction: column;
+                        .api-weather {
+                            margin-right: 0;
+                            .card-body {
+                                padding: 0.8rem;
+                            }
+                        }
+                        .api-map {
+                            .map-container {
+                                height: 250px;
+                                max-height: 300px;
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+                .waka-lang-wrapper,
+                .waka-time-wrapper {
                     flex-direction: column;
-                    .api-weather {
-                        margin-right: 0;
-                        .card-body {
-                            padding: 0.8rem;
-                        }
-                    }
-                    .api-map {
-                        .map-container {
-                            height: 250px;
-                            max-height: 300px;
-                            width: auto;
+                    .waka-lang-list {
+                        ul {
+                            height: auto;
                         }
                     }
                 }
             }
-            .waka-lang-wrapper,
-            .waka-time-wrapper {
-                flex-direction: column;
-                .waka-lang-list {
-                    ul {
-                        height: auto;
-                    }
-                }
-            }
-        }
-        .tags-container {
-            flex-direction: column-reverse;
-            .tags {
-                margin-bottom: 1rem;
-                .my-card-list {
-                    li {
-                        padding-right: 3rem;
-                        margin-bottom: 0.5rem;
-                    }
-                }
-            }
-            form {
-                input[type="text"] {
-                    border: 1px solid #000;
-                    border-radius: 5px;
-                    padding-left: 0.5rem;
+            .tags-container {
+                flex-direction: column-reverse;
+                .tags {
                     margin-bottom: 1rem;
+                    .my-card-list {
+                        li {
+                            padding-right: 3rem;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                }
+                form {
+                    input[type="text"] {
+                        border: 1px solid #000;
+                        border-radius: 5px;
+                        padding-left: 0.5rem;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
@@ -811,37 +814,40 @@ $stdWidth: 800px;
     .posts-index {
         width: 100%;
     }
-    .post-container {
-        padding: 0 1rem;
-        width: auto;
-        .post {
-            padding: 0 1rem 1rem;
-            .post-title-tag-cat {
-                flex-direction: column;
-                margin-top: 1rem;
-            }
-            .post-title {
-                margin-bottom: 1rem;
-            }
-            .post-body {
-                margin-bottom: 2rem;
-            }
-            .post-labels {
-                flex-wrap: wrap;
-                .post-created-at {
-                    text-align: left;
+    .posts-show-page {
+        .post-container {
+            padding: 0 1rem;
+            width: auto;
+            .post {
+                padding: 0 1rem 1rem;
+                .post-title-tag-cat {
+                    flex-direction: column;
+                    margin: 1rem 0 1rem;
                 }
-            }
-            .post-comment-section {
-                display: flex;
-                flex-direction: column;
-                form {
-                    margin-right: 0 !important;
+                .post-title {
+                    margin-bottom: 1rem;
                 }
-                .comment-container {
-                    margin-top: 1rem;
-                    .comment {
-                        margin-bottom: 1.5rem;
+                .post-body {
+                    margin-bottom: 2rem;
+                }
+                .post-labels {
+                    flex-wrap: wrap;
+                    align-self: flex-end;
+                    .post-created-at {
+                        text-align: left;
+                    }
+                }
+                .post-comment-section {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    form {
+                        margin-right: 0 !important;
+                    }
+                    .comment-container {
+                        margin-top: 1rem;
+                        .comment {
+                            margin-bottom: 1.5rem;
+                        }
                     }
                 }
             }
@@ -889,18 +895,6 @@ $stdWidth: 800px;
                     color: $myOrange;
                     &:hover {
                         text-decoration: none;
-                    }
-                }
-            }
-        }
-    }
-    .posts-show-page {
-        .post-container {
-            .post {
-                .post-title-tag-cat {
-                    margin: 1rem 0 1rem;
-                    .post-labels {
-                        align-self: flex-end;
                     }
                 }
             }
