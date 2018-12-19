@@ -13873,7 +13873,6 @@ $(document).ready(function () {
             var lon = pos.lng;
             var owmApiKey = "29ea1d615b68f7299dd1826274565af4";
             var owmQuery = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&APPID=" + owmApiKey;
-            console.log("Weather here!");
             $.ajax({
                 type: "GET",
                 url: owmQuery,
@@ -13886,8 +13885,6 @@ $(document).ready(function () {
                     var sunrise = new moment.unix(sys.sunrise).format("H:mm:ss a");
 
                     var sunset = new moment.unix(sys.sunset).format("H:mm:ss a");
-                    console.log(data);
-
                     loader.css("display", "none");
                     weatherDetails.html("\n                            <div class=\"weather-left\">\n                                    <p>Location:</p>\n                                    <p>Description:</p>\n                                    <p>Temp:</p>\n                                    <p>Wind:</p>\n                                    <p>Pressure:</p>\n                                    <p>Humidity:</p>\n                                    <p>Sunrise:</p>\n                                    <p>Sunset:</p>\n                                </div>\n                                <div class=\"weather-right\">\n                                    <p>" + data.name + ", " + sys.country + "</p>\n                                    <p>" + weath.main + ", " + weath.description + "</p>\n                                    <p>" + main.temp + "&deg;</p>\n                                    <p>" + wind.speed + "mph</p>\n                                    <p>" + main.pressure + "mb</p>\n                                    <p>" + main.humidity + "%</p>\n                                    <p>" + sunrise + "</p>\n                                    <p>" + sunset + "</p>\n                                </div>\n                            ");
                 }
@@ -13899,6 +13896,20 @@ $(document).ready(function () {
         // Browser doesn't support Geolocation
         handleLocationError(false, alert("Browser doesn't support Geolocation"));
     }
+
+    // Dark Sky API
+    // let dskey = "fd1ad03214ebdecaf497e0777b996705";
+    // let dslat = 49.214439;
+    // let dslng = -2.13125;
+    // let dsurl = `https://api.darksky.net/forecast/${dskey}/${dslat},${dslng}`;
+
+    // $.ajax({
+    //     type: "GET",
+    //     url: dsurl,
+    //     success: function(data) {
+    //         console.log(data);
+    //     }
+    // });
 
     // Dashboard date and time
     function updateTime() {

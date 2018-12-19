@@ -189,7 +189,6 @@ $(document).ready(function() {
                 let lon = pos.lng;
                 let owmApiKey = "29ea1d615b68f7299dd1826274565af4";
                 let owmQuery = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&APPID=${owmApiKey}`;
-                console.log("Weather here!");
                 $.ajax({
                     type: "GET",
                     url: owmQuery,
@@ -206,8 +205,6 @@ $(document).ready(function() {
                         let sunset = new moment.unix(sys.sunset).format(
                             "H:mm:ss a"
                         );
-                        console.log(data);
-
                         loader.css("display", "none");
                         weatherDetails.html(`
                             <div class="weather-left">
@@ -246,6 +243,20 @@ $(document).ready(function() {
             alert("Browser doesn't support Geolocation")
         );
     }
+
+    // Dark Sky API
+    // let dskey = "fd1ad03214ebdecaf497e0777b996705";
+    // let dslat = 49.214439;
+    // let dslng = -2.13125;
+    // let dsurl = `https://api.darksky.net/forecast/${dskey}/${dslat},${dslng}`;
+
+    // $.ajax({
+    //     type: "GET",
+    //     url: dsurl,
+    //     success: function(data) {
+    //         console.log(data);
+    //     }
+    // });
 
     // Dashboard date and time
     function updateTime() {
