@@ -85,11 +85,13 @@
                   {{ \Carbon\Carbon::parse($c->created_at)->format('d/n/y') }}
                 </p>
               </div>
-              <form action="/comments/{{ $c->id }}" method="POST">
-                @method('DELETE')
-                @csrf
-                <button class="delete-icon deleteConfirm" type="submit"><i class="far fa-trash-alt"></i></button>
-              </form>
+              @auth
+                <form action="/comments/{{ $c->id }}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                  <button class="delete-icon deleteConfirm" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+              @endauth
             </div>
           @endforeach 
         </div>
